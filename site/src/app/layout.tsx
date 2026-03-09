@@ -12,7 +12,7 @@ const YANDEX_METRIKA_ID = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://kurkina.ru"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://kurkina.ru"
   ),
   title: "Ольга Куркина — Нутрициолог | Здоровье и энергия после 50",
   description:

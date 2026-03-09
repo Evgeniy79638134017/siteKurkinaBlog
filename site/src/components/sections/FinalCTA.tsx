@@ -11,7 +11,7 @@ export function FinalCTA() {
   const altMessengers = messengers.filter((m) => !m.isPrimary);
 
   return (
-    <section id="contact" className="bg-quote-bg py-16 md:py-24">
+    <section id="contacts" className="bg-quote-bg py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-4 text-center">
         <ScrollReveal direction="up">
           <h2 className="font-heading text-3xl font-bold text-white md:text-4xl lg:text-5xl">

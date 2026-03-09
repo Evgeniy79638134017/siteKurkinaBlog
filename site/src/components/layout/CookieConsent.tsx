@@ -1,26 +1,38 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useSyncExternalStore, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const STORAGE_KEY = "cookie-consent-accepted";
 
-export function CookieConsent() {
-  const [visible, setVisible] = useState(false);
+function subscribeStorage(cb: () => void) {
+  window.addEventListener("storage", cb);
+  return () => window.removeEventListener("storage", cb);
+}
 
-  useEffect(() => {
-    if (!localStorage.getItem(STORAGE_KEY)) {
-      setVisible(true);
-    }
-  }, []);
+function getConsentSnapshot() {
+  return localStorage.getItem(STORAGE_KEY) !== null;
+}
+
+function getServerSnapshot() {
+  return true; // assume accepted on server to avoid flash
+}
+
+export function CookieConsent() {
+  const accepted = useSyncExternalStore(
+    subscribeStorage,
+    getConsentSnapshot,
+    getServerSnapshot
+  );
+  const [dismissed, setDismissed] = useState(false);
 
   function accept() {
     localStorage.setItem(STORAGE_KEY, "1");
-    setVisible(false);
+    setDismissed(true);
   }
 
-  if (!visible) return null;
+  if (accepted || dismissed) return null;
 
   return (
     <div className="fixed right-0 bottom-0 left-0 z-50 border-t border-border bg-bg-main/95 px-4 py-4 shadow-lg backdrop-blur-sm md:bottom-4 md:right-4 md:left-auto md:max-w-md md:rounded-xl md:border">

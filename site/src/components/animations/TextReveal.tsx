@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, type ReactNode, type ElementType } from "react";
+import { useRef, type ReactNode } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
