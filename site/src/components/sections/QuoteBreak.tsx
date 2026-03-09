@@ -11,7 +11,7 @@ export function QuoteBreak({ quoteIndex }: QuoteBreakProps) {
   const quote = quotes[quoteIndex];
 
   return (
-    <section className="bg-quote-bg py-16 md:py-24">
+    <section className="overflow-hidden bg-quote-bg py-16 md:py-24">
       <div className="relative mx-auto max-w-4xl px-6 text-center">
         {/* Decorative open quote */}
         <span

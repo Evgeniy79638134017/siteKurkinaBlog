@@ -26,7 +26,7 @@ export function PainPoints() {
       <div className="mx-auto max-w-5xl px-4">
         {/* Section heading */}
         <ScrollReveal direction="up" className="mb-10 text-center md:mb-14">
-          <h2 className="font-heading text-3xl font-bold text-text-primary md:text-4xl">
+          <h2 className="font-heading text-3xl font-bold text-text-primary md:text-4xl lg:text-5xl">
             {painPointsData.heading}
           </h2>
         </ScrollReveal>
@@ -45,7 +45,7 @@ export function PainPoints() {
                 className={[
                   "flex items-start gap-4 rounded-xl border border-border bg-bg-section p-5 shadow-sm",
                   // center the last 2 cards on md (3-col row)
-                  i === 3 ? "md:col-start-1 md:col-end-2 lg:col-start-auto lg:col-end-auto" : "",
+                  i === 3 ? "md:col-start-2" : "",
                 ].join(" ")}
               >
                 {Icon && (

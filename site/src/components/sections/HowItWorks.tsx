@@ -77,7 +77,7 @@ export function HowItWorks() {
           <Button
             asChild
             size="lg"
-            className="h-12 bg-cta px-8 text-base text-white shadow-md transition-all hover:bg-cta-hover hover:-translate-y-0.5 hover:shadow-lg"
+            className="h-12 w-full bg-cta px-8 text-base text-white shadow-md transition-all hover:bg-cta-hover hover:-translate-y-0.5 hover:shadow-lg sm:w-auto"
           >
             <a href={ctaHref} target="_blank" rel="noopener noreferrer">
               Записаться на консультацию

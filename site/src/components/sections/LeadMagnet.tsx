@@ -41,7 +41,7 @@ export function LeadMagnet() {
               <Button
                 asChild
                 size="lg"
-                className="mt-8 h-12 bg-cta px-8 text-base text-white shadow-md transition-all hover:bg-cta-hover hover:-translate-y-0.5 hover:shadow-lg"
+                className="mt-8 h-12 w-full bg-cta px-8 text-base text-white shadow-md transition-all hover:bg-cta-hover hover:-translate-y-0.5 hover:shadow-lg sm:w-auto"
               >
                 <a href={ctaHref} target="_blank" rel="noopener noreferrer">
                   <Send className="mr-2 h-4 w-4" />
@@ -51,7 +51,7 @@ export function LeadMagnet() {
             </div>
 
             {/* Decorative placeholder */}
-            <div className="mt-8 flex aspect-square w-full max-w-[200px] items-center justify-center self-center rounded-xl bg-bg-warm/60 md:mt-0 md:max-w-[240px]">
+            <div className="mx-auto mt-8 flex aspect-square w-full max-w-[200px] items-center justify-center rounded-xl bg-bg-warm/60 md:mx-0 md:mt-0 md:max-w-[240px]">
               <span className="text-center font-heading text-5xl leading-none text-accent/30">
                 📋
               </span>

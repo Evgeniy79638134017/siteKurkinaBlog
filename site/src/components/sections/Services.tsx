@@ -62,8 +62,8 @@ export function Services() {
                   size="lg"
                   className={
                     isPrimary
-                      ? "h-12 bg-cta text-white shadow-sm hover:bg-cta-hover hover:shadow-md"
-                      : "h-12 border-border text-text-primary hover:bg-bg-section"
+                      ? "h-12 w-full bg-cta text-white shadow-sm hover:bg-cta-hover hover:shadow-md"
+                      : "h-12 w-full border-border text-text-primary hover:bg-bg-section"
                   }
                   variant={isPrimary ? "default" : "outline"}
                 >

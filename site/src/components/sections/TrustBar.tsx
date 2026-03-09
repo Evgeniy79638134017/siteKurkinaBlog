@@ -44,7 +44,7 @@ export function TrustBar() {
                 {Icon && (
                   <Icon className="mb-1 h-6 w-6 text-accent" strokeWidth={1.8} />
                 )}
-                <span className="font-heading text-2xl font-bold text-text-primary md:text-3xl">
+                <span className="font-heading text-xl font-bold text-text-primary sm:text-2xl md:text-3xl">
                   {numeric ? (
                     <CountUp end={numeric.num} suffix={numeric.suffix} />
                   ) : (

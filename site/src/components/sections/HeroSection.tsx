@@ -43,11 +43,11 @@ export function HeroSection() {
           </FadeIn>
 
           <FadeIn direction="up" delay={0.7} className="mt-8 w-full md:w-auto">
-            <div className="flex flex-col gap-4 sm:flex-row">
+            <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
               <Button
                 asChild
                 size="lg"
-                className="h-12 bg-cta px-8 text-base text-white shadow-md transition-all hover:bg-cta-hover hover:-translate-y-0.5 hover:shadow-lg"
+                className="h-12 w-full bg-cta px-8 text-base text-white shadow-md transition-all hover:bg-cta-hover hover:-translate-y-0.5 hover:shadow-lg sm:w-auto"
               >
                 <a
                   href={ctaPrimaryHref}
@@ -61,7 +61,7 @@ export function HeroSection() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="h-12 border-border px-8 text-base text-text-primary hover:bg-bg-section"
+                className="h-12 w-full border-border px-8 text-base text-text-primary hover:bg-bg-section sm:w-auto"
               >
                 <a href={heroData.ctaSecondary.href}>
                   {heroData.ctaSecondary.text}
