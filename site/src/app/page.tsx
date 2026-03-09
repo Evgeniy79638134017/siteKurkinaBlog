@@ -6,6 +6,9 @@ import { QuoteBreak } from "@/components/sections/QuoteBreak";
 import { Services } from "@/components/sections/Services";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { LeadMagnet } from "@/components/sections/LeadMagnet";
+import { BlogPreview } from "@/components/sections/BlogPreview";
+import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export default function Home() {
   return (
@@ -19,6 +22,9 @@ export default function Home() {
       <HowItWorks />
       <QuoteBreak quoteIndex={1} />
       <Testimonials />
+      <LeadMagnet />
+      <BlogPreview />
+      <FinalCTA />
     </main>
   );
 }
