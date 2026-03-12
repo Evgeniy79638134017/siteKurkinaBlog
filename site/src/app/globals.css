@@ -1,0 +1,234 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ─────────────────────────────────────────────
+   ДИЗАЙН-СИСТЕМА: Сайт Ольги Куркиной
+   Тёплые wellness-тона для аудитории 50+
+───────────────────────────────────────────── */
+
+@theme {
+  /* Цветовая палитра */
+  --color-cream:       #F7F0E6;
+  --color-beige:       #F4E1C4;
+  --color-beige-dark:  #EDD4B0;
+  --color-sage:        #96AB88;
+  --color-sage-dark:   #7A9270;
+  --color-sage-light:  #B5C9A9;
+  --color-terra:       #D08C60;
+  --color-terra-dark:  #BA7449;
+  --color-taupe:       #A58D7F;
+  --color-gold:        #C9A84C;
+  --color-gold-light:  #E8C96A;
+  --color-dark:        #2C1810;
+  --color-muted:       #6B5B52;
+  --color-muted-light: #9E8A7E;
+  --color-border:      #E5D5C5;
+  --color-border-dark: #CDB99E;
+
+  /* Семантические цвета (shadcn совместимость) */
+  --color-background:  #F7F0E6;
+  --color-foreground:  #2C1810;
+  --color-card:        #FFFFFF;
+  --color-card-foreground: #2C1810;
+  --color-primary:     #96AB88;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary:   #F4E1C4;
+  --color-secondary-foreground: #2C1810;
+  --color-accent:      #D08C60;
+  --color-accent-foreground: #FFFFFF;
+  --color-muted-bg:    #F0E6D8;
+  --color-muted-fg:    #6B5B52;
+  --color-destructive: #D94040;
+  --color-ring:        #96AB88;
+
+  /* Шрифты */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans:    "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-mono:    "JetBrains Mono", "Fira Code", monospace;
+
+  /* Радиусы */
+  --radius-xs:  4px;
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+  --radius-xl:  32px;
+  --radius-2xl: 48px;
+  --radius-full: 9999px;
+
+  /* Тени */
+  --shadow-warm-sm:  0 2px 8px rgba(44, 24, 16, 0.08);
+  --shadow-warm-md:  0 4px 20px rgba(44, 24, 16, 0.10);
+  --shadow-warm-lg:  0 8px 40px rgba(44, 24, 16, 0.12);
+  --shadow-warm-xl:  0 16px 60px rgba(44, 24, 16, 0.15);
+
+  /* Анимации */
+  --ease-smooth:  cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast:   150ms;
+  --duration-base:   300ms;
+  --duration-slow:   500ms;
+  --duration-slower: 800ms;
+}
+
+/* ─────────────────────────────────────────────
+   CSS ПЕРЕМЕННЫЕ (для shadcn/ui совместимости)
+───────────────────────────────────────────── */
+:root {
+  --background: 38 47% 93%;
+  --foreground: 15 28% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 15 28% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 15 28% 15%;
+  --primary: 108 15% 60%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 35 48% 87%;
+  --secondary-foreground: 15 28% 15%;
+  --muted: 32 30% 85%;
+  --muted-foreground: 18 14% 37%;
+  --accent: 25 55% 60%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62% 54%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 32 38% 84%;
+  --input: 32 38% 84%;
+  --ring: 108 15% 60%;
+  --radius: 0.75rem;
+  --chart-1: 108 15% 60%;
+  --chart-2: 25 55% 60%;
+  --chart-3: 201 40% 45%;
+  --chart-4: 45 70% 55%;
+  --chart-5: 15 28% 45%;
+}
+
+/* ─────────────────────────────────────────────
+   БАЗОВЫЕ СТИЛИ
+───────────────────────────────────────────── */
+* {
+  border-color: var(--color-border);
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-dark);
+  font-family: var(--font-sans);
+  font-size: 18px; /* Крупный шрифт для аудитории 50+ */
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Типографика */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-dark);
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+
+p {
+  color: var(--color-dark);
+  line-height: 1.75;
+}
+
+a {
+  color: var(--color-sage-dark);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-smooth);
+}
+
+a:hover {
+  color: var(--color-terra);
+}
+
+/* Выделение текста */
+::selection {
+  background-color: var(--color-sage-light);
+  color: var(--color-dark);
+}
+
+/* Фокус (доступность) */
+:focus-visible {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Скроллбар */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-beige);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-taupe);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+/* ─────────────────────────────────────────────
+   УТИЛИТЫ
+───────────────────────────────────────────── */
+
+/* Секция-контейнер */
+.section-padding {
+  padding-top: clamp(3rem, 6vw, 6rem);
+  padding-bottom: clamp(3rem, 6vw, 6rem);
+}
+
+/* Контейнер */
+.container-site {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+/* Золотая цитата */
+.quote-gold {
+  border-left: 3px solid var(--color-gold);
+  padding-left: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+/* Анимация появления */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up var(--duration-slow) var(--ease-smooth) forwards;
+}
+
+/* Доступность: отключение анимаций */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
