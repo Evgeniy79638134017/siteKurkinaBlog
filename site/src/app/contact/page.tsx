@@ -62,16 +62,16 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-[#F7F0E6]">
+      <section className="pt-32 pb-16 bg-cream">
         <div className="container-site">
           <div className="max-w-2xl">
-            <p className="font-sans text-sm font-semibold uppercase tracking-widest text-[#96AB88] mb-4">
+            <p className="font-sans text-sm font-semibold uppercase tracking-widest text-sage mb-4">
               Связаться
             </p>
-            <h1 className="font-display text-[#2C1810] mb-6">
+            <h1 className="font-display text-dark mb-6">
               Контакты
             </h1>
-            <p className="font-sans text-xl text-[#6B5B52] leading-relaxed">
+            <p className="font-sans text-xl text-muted leading-relaxed">
               Запишитесь на бесплатную консультацию — поговорим о вашем здоровье
               или о возможностях партнёрства. Отвечаю лично.
             </p>
@@ -80,7 +80,7 @@ export default function ContactPage() {
       </section>
 
       {/* Основные способы связи и форма */}
-      <section className="section-padding bg-[#F4E1C4]">
+      <section className="section-padding bg-beige">
         <div className="container-site">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10">
@@ -88,24 +88,24 @@ export default function ContactPage() {
             {/* Левая часть: Прямые контакты */}
             <div className="lg:col-span-7 flex flex-col gap-10">
               <div>
-                <h2 className="font-display text-[#2C1810] mb-8">
+                <h2 className="font-display text-dark mb-8">
                   Как связаться со мной
                 </h2>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {CONTACT_OPTIONS.map((opt, i) => (
+                  {CONTACT_OPTIONS.map((opt) => (
                     <div
                       key={opt.title}
                       className={`rounded-2xl p-8 flex flex-col ${
                         opt.primary
-                          ? "bg-[#96AB88] text-white sm:col-span-2"
-                          : "bg-white text-[#2C1810]"
+                          ? "bg-sage text-white sm:col-span-2"
+                          : "bg-white text-dark"
                       }`}
                     >
                       <div className="text-3xl mb-4">{opt.icon}</div>
                       <p
                         className={`font-sans text-xs font-semibold uppercase tracking-widest mb-1 ${
-                          opt.primary ? "text-white/60" : "text-[#A58D7F]"
+                          opt.primary ? "text-white/60" : "text-taupe"
                         }`}
                       >
                         {opt.title}
@@ -119,7 +119,7 @@ export default function ContactPage() {
                       </p>
                       <p
                         className={`font-sans text-sm leading-relaxed mb-6 flex-1 ${
-                          opt.primary ? "text-white/75" : "text-[#6B5B52]"
+                          opt.primary ? "text-white/75" : "text-muted"
                         }`}
                       >
                         {opt.description}
@@ -130,8 +130,8 @@ export default function ContactPage() {
                         rel={opt.href.startsWith("tel:") ? undefined : "noopener noreferrer"}
                         className={`inline-flex items-center justify-center px-6 py-3 rounded-full font-sans font-semibold text-sm transition-colors ${
                           opt.primary
-                            ? "bg-white text-[#96AB88] hover:bg-[#F7F0E6]"
-                            : "bg-[#96AB88]/15 text-[#7A9270] hover:bg-[#96AB88]/25"
+                            ? "bg-white text-sage hover:bg-cream"
+                            : "bg-sage/15 text-sage-dark hover:bg-sage/25"
                         }`}
                       >
                         {opt.cta}
@@ -142,26 +142,26 @@ export default function ContactPage() {
               </div>
 
               {/* Соцсети */}
-              <div className="bg-white rounded-2xl p-8 border border-[#E5D5C5]">
-                <h3 className="font-display text-2xl text-[#2C1810] mb-6">
+              <div className="bg-white rounded-2xl p-8 border border-border">
+                <h3 className="font-display text-2xl text-dark mb-6">
                   Социальные сети
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                   {SOCIAL_OPTIONS.map((s) => (
                     <div key={s.name}>
-                      <p className="font-sans text-xs font-semibold uppercase tracking-wider text-[#A58D7F] mb-1">
+                      <p className="font-sans text-xs font-semibold uppercase tracking-wider text-taupe mb-1">
                         {s.name}
                       </p>
                       <a
                         href={s.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-sans text-[#96AB88] hover:text-[#7A9270] font-medium transition-colors block mb-1"
+                        className="font-sans text-sage hover:text-sage-dark font-medium transition-colors block mb-1"
                       >
                         {s.handle}
                       </a>
                       {s.note && (
-                        <p className="font-sans text-[10px] text-[#A58D7F] leading-snug">{s.note}</p>
+                        <p className="font-sans text-[10px] text-taupe leading-snug">{s.note}</p>
                       )}
                     </div>
                   ))}
@@ -179,10 +179,10 @@ export default function ContactPage() {
       </section>
 
       {/* Что ожидать */}
-      <section className="section-padding bg-[#F7F0E6]">
+      <section className="section-padding bg-cream">
         <div className="container-site">
           <div className="max-w-3xl">
-            <h2 className="font-display text-[#2C1810] mb-8">
+            <h2 className="font-display text-dark mb-8">
               Как проходит первый разговор
             </h2>
             <div className="space-y-6">
@@ -204,14 +204,14 @@ export default function ContactPage() {
                 },
               ].map((item) => (
                 <div key={item.step} className="flex gap-5">
-                  <div className="w-10 h-10 rounded-full bg-[#96AB88]/15 flex items-center justify-center flex-shrink-0">
-                    <span className="font-display text-base font-semibold text-[#96AB88]">
+                  <div className="w-10 h-10 rounded-full bg-sage/15 flex items-center justify-center flex-shrink-0">
+                    <span className="font-display text-base font-semibold text-sage">
                       {item.step}
                     </span>
                   </div>
                   <div>
-                    <h3 className="font-display text-xl text-[#2C1810] mb-1">{item.title}</h3>
-                    <p className="font-sans text-[#6B5B52] leading-relaxed">{item.text}</p>
+                    <h3 className="font-display text-xl text-dark mb-1">{item.title}</h3>
+                    <p className="font-sans text-muted leading-relaxed">{item.text}</p>
                   </div>
                 </div>
               ))}
@@ -221,7 +221,7 @@ export default function ContactPage() {
       </section>
 
       {/* Финальный CTA */}
-      <section className="section-padding bg-[#96AB88]">
+      <section className="section-padding bg-sage">
         <div className="container-site text-center">
           <h2 className="font-display text-white mb-4">
             Первый шаг — написать мне
@@ -233,7 +233,7 @@ export default function ContactPage() {
             href={CONTACT.telegramPersonal}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-10 py-4 bg-white text-[#7A9270] rounded-full font-sans font-semibold text-lg hover:bg-[#F7F0E6] transition-colors"
+            className="inline-flex items-center px-10 py-4 bg-white text-sage-dark rounded-full font-sans font-semibold text-lg hover:bg-cream transition-colors"
           >
             Написать в Telegram
           </a>

@@ -27,18 +27,18 @@ const STEPS = [
 
 export function HowItWorks() {
   return (
-    <section className="section-padding bg-[#F7F0E6]">
+    <section className="section-padding bg-cream">
       <div className="container-site">
 
         {/* Заголовок */}
         <div className="max-w-2xl mb-12 md:mb-16">
-          <p className="font-sans text-sm font-semibold uppercase tracking-widest text-[#96AB88] mb-3">
+          <p className="font-sans text-sm font-semibold uppercase tracking-widest text-sage mb-3">
             Как это работает
           </p>
-          <h2 className="font-display text-[#2C1810] mb-4">
+          <h2 className="font-display text-dark mb-4">
             Три шага к результату
           </h2>
-          <p className="font-sans text-[#6B5B52] text-lg">
+          <p className="font-sans text-muted text-lg">
             Простой путь от «не знаю с чего начать» до стойкого улучшения здоровья.
           </p>
         </div>
@@ -49,25 +49,25 @@ export function HowItWorks() {
             <div key={i} className="relative">
               {/* Разделитель между шагами */}
               {i < STEPS.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-full w-full h-px bg-[#E5D5C5] z-0 -translate-x-1/2" />
+                <div className="hidden md:block absolute top-8 left-full w-full h-px bg-border z-0 -translate-x-1/2" />
               )}
 
               <div className="relative z-10">
                 {/* Номер */}
-                <div className="w-16 h-16 rounded-full bg-[#96AB88]/15 flex items-center justify-center mb-6">
-                  <span className="font-display text-2xl font-semibold text-[#96AB88]">
+                <div className="w-16 h-16 rounded-full bg-sage/15 flex items-center justify-center mb-6">
+                  <span className="font-display text-2xl font-semibold text-sage">
                     {step.number}
                   </span>
                 </div>
 
                 {/* Текст */}
-                <h3 className="font-display text-2xl text-[#2C1810] mb-3">
+                <h3 className="font-display text-2xl text-dark mb-3">
                   {step.title}
                 </h3>
-                <p className="font-sans text-[#6B5B52] text-base leading-relaxed mb-3">
+                <p className="font-sans text-muted text-base leading-relaxed mb-3">
                   {step.description}
                 </p>
-                <p className="font-sans text-xs text-[#A58D7F] bg-[#F4E1C4] rounded-full px-3 py-1 inline-block">
+                <p className="font-sans text-xs text-taupe bg-beige rounded-full px-3 py-1 inline-block">
                   {step.note}
                 </p>
               </div>
@@ -76,7 +76,7 @@ export function HowItWorks() {
         </div>
 
         {/* CTA */}
-        <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-[#2C1810]/10">
+        <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-dark/10">
           <Image
             src="/images/consultation-olga.png"
             alt="Бесплатная консультация"
@@ -100,7 +100,7 @@ export function HowItWorks() {
               href={CONTACT.telegramPersonal}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 bg-white text-[#2C1810] rounded-full font-sans font-semibold text-lg hover:bg-[#F7F0E6] transition-colors"
+              className="inline-flex items-center px-8 py-4 bg-white text-dark rounded-full font-sans font-semibold text-lg hover:bg-cream transition-colors"
             >
               Написать в Telegram
             </a>

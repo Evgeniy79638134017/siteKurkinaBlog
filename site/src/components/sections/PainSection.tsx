@@ -29,18 +29,18 @@ const PAINS = [
 
 export function PainSection() {
   return (
-    <section className="section-padding bg-[#F4E1C4]">
+    <section className="section-padding bg-beige">
       <div className="container-site">
 
         {/* Заголовок */}
         <div className="max-w-2xl mb-12 md:mb-16">
-          <p className="font-sans text-sm font-semibold uppercase tracking-widest text-[#96AB88] mb-3">
+          <p className="font-sans text-sm font-semibold uppercase tracking-widest text-sage mb-3">
             Узнаёте себя?
           </p>
-          <h2 className="font-display text-[#2C1810] mb-4">
+          <h2 className="font-display text-dark mb-4">
             Три главные проблемы людей 50+
           </h2>
-          <p className="font-sans text-[#6B5B52] text-lg">
+          <p className="font-sans text-muted text-lg">
             Я сама прошла через всё это — и нашла выход. Теперь помогаю другим.
           </p>
         </div>
@@ -53,17 +53,17 @@ export function PainSection() {
               className="bg-white rounded-2xl p-8 shadow-[0_4px_20px_rgba(44,24,16,0.08)] flex flex-col"
             >
               <div className="text-4xl mb-4">{pain.emoji}</div>
-              <h3 className="font-display text-2xl text-[#2C1810] mb-3">
+              <h3 className="font-display text-2xl text-dark mb-3">
                 {pain.title}
               </h3>
-              <p className="font-sans text-[#6B5B52] text-base leading-relaxed mb-6 flex-1">
+              <p className="font-sans text-muted text-base leading-relaxed mb-6 flex-1">
                 {pain.description}
               </p>
-              <div className="border-t border-[#E5D5C5] pt-4">
-                <p className="font-sans text-sm text-[#A58D7F] mb-2">Решение:</p>
+              <div className="border-t border-border pt-4">
+                <p className="font-sans text-sm text-taupe mb-2">Решение:</p>
                 <Link
                   href={pain.href}
-                  className="font-sans font-semibold text-[#96AB88] hover:text-[#7A9270] transition-colors"
+                  className="font-sans font-semibold text-sage hover:text-sage-dark transition-colors"
                 >
                   {pain.solution} →
                 </Link>

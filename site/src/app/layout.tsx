@@ -20,6 +20,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://olga-kurkina.vercel.app"),
   title: {
     default: "Ольга Куркина — нутрициолог, биохакинг для 50+",
     template: "%s | Ольга Куркина",
@@ -45,14 +46,7 @@ export const metadata: Metadata = {
     title: "Ольга Куркина — нутрициолог, биохакинг для 50+",
     description:
       "Нутрициолог и эксперт по биохакингу для людей 50+. Помогаю восстановить здоровье и энергию через клеточное питание.",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Ольга Куркина — нутрициолог",
-      },
-    ],
+    images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",

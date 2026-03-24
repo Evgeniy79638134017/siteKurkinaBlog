@@ -73,25 +73,25 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-[#F7F0E6] overflow-hidden">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-cream overflow-hidden">
         <div className="container-site">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
             
             <div className="max-w-xl order-2 md:order-1">
-              <p className="font-sans text-sm font-semibold uppercase tracking-widest text-[#96AB88] mb-4">
+              <p className="font-sans text-sm font-semibold uppercase tracking-widest text-sage mb-4">
                 Моя история
               </p>
-              <h1 className="font-display text-[#2C1810] mb-6">
+              <h1 className="font-display text-dark mb-6">
                 Как директор школы победила ревматоидный артрит
               </h1>
-              <p className="font-sans text-xl text-[#6B5B52] leading-relaxed">
+              <p className="font-sans text-xl text-muted leading-relaxed">
                 Меня зовут Ольга Куркина. Мне 64 года. Моё физическое состояние
                 соответствует 40 годам. И это — не метафора, а факт, подтверждённый
                 анализами и ощущениями каждого дня.
               </p>
             </div>
 
-            <div className="order-1 md:order-2 relative w-full max-w-md mx-auto aspect-[4/5] rounded-2xl md:rounded-[2rem] overflow-hidden shadow-xl shadow-[#2C1810]/5">
+            <div className="order-1 md:order-2 relative w-full max-w-md mx-auto aspect-[4/5] rounded-2xl md:rounded-[2rem] overflow-hidden shadow-xl shadow-dark/5">
               <Image
                 src="/images/about-olga.png"
                 alt="Ольга Куркина"
@@ -108,7 +108,7 @@ export default function AboutPage() {
       </section>
 
       {/* Ключевые цифры */}
-      <section className="py-10 bg-[#96AB88]">
+      <section className="py-10 bg-sage">
         <div className="container-site">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
@@ -132,14 +132,14 @@ export default function AboutPage() {
       </section>
 
       {/* Таймлайн */}
-      <section className="section-padding bg-[#F7F0E6]">
+      <section className="section-padding bg-cream">
         <div className="container-site">
-          <h2 className="font-display text-[#2C1810] mb-12 max-w-xl">
+          <h2 className="font-display text-dark mb-12 max-w-xl">
             Хронология: от болезни к здоровью и бизнесу
           </h2>
 
           <div className="relative max-w-3xl">
-            <div className="absolute left-5 top-0 bottom-0 w-px bg-[#E5D5C5]" />
+            <div className="absolute left-5 top-0 bottom-0 w-px bg-border" />
 
             <div className="space-y-10">
               {TIMELINE.map((item, i) => (
@@ -147,10 +147,10 @@ export default function AboutPage() {
                   <div
                     className={`absolute left-0 top-1 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
                       item.accent
-                        ? "bg-[#D08C60]"
+                        ? "bg-terra"
                         : i === TIMELINE.length - 1
-                        ? "bg-[#2C1810]"
-                        : "bg-[#96AB88]"
+                        ? "bg-dark"
+                        : "bg-sage"
                     }`}
                   >
                     <span className="text-white font-display text-sm font-semibold">
@@ -159,9 +159,9 @@ export default function AboutPage() {
                   </div>
 
                   <div>
-                    <p className="font-sans text-xs text-[#A58D7F] mb-0.5">{item.period}</p>
-                    <h3 className="font-display text-2xl text-[#2C1810] mb-2">{item.title}</h3>
-                    <p className="font-sans text-[#6B5B52] leading-relaxed">{item.text}</p>
+                    <p className="font-sans text-xs text-taupe mb-0.5">{item.period}</p>
+                    <h3 className="font-display text-2xl text-dark mb-2">{item.title}</h3>
+                    <p className="font-sans text-muted leading-relaxed">{item.text}</p>
                   </div>
                 </div>
               ))}
@@ -171,13 +171,13 @@ export default function AboutPage() {
       </section>
 
       {/* Ценности */}
-      <section className="section-padding bg-[#F4E1C4]">
+      <section className="section-padding bg-beige">
         <div className="container-site">
           <div className="max-w-xl mb-12">
-            <p className="font-sans text-sm font-semibold uppercase tracking-widest text-[#96AB88] mb-3">
+            <p className="font-sans text-sm font-semibold uppercase tracking-widest text-sage mb-3">
               Мои принципы
             </p>
-            <h2 className="font-display text-[#2C1810]">
+            <h2 className="font-display text-dark">
               На чём строится моя работа
             </h2>
           </div>
@@ -185,13 +185,13 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {VALUES.map((v, i) => (
               <div key={i} className="bg-white rounded-2xl p-8">
-                <div className="w-10 h-10 rounded-full bg-[#96AB88]/15 flex items-center justify-center mb-5">
-                  <span className="font-display text-lg font-semibold text-[#96AB88]">
+                <div className="w-10 h-10 rounded-full bg-sage/15 flex items-center justify-center mb-5">
+                  <span className="font-display text-lg font-semibold text-sage">
                     {i + 1}
                   </span>
                 </div>
-                <h3 className="font-display text-2xl text-[#2C1810] mb-3">{v.title}</h3>
-                <p className="font-sans text-[#6B5B52] leading-relaxed">{v.text}</p>
+                <h3 className="font-display text-2xl text-dark mb-3">{v.title}</h3>
+                <p className="font-sans text-muted leading-relaxed">{v.text}</p>
               </div>
             ))}
           </div>
@@ -199,24 +199,24 @@ export default function AboutPage() {
       </section>
 
       {/* Цитата */}
-      <section className="py-16 bg-[#F7F0E6]">
+      <section className="py-16 bg-cream">
         <div className="container-site">
           <blockquote className="max-w-3xl mx-auto text-center">
-            <p className="font-display text-3xl md:text-4xl text-[#2C1810] italic leading-snug mb-4">
+            <p className="font-display text-3xl md:text-4xl text-dark italic leading-snug mb-4">
               «Только позитив. И будет всё хорошо.»
             </p>
-            <cite className="font-sans text-[#A58D7F] not-italic">— Ольга Куркина</cite>
+            <cite className="font-sans text-taupe not-italic">— Ольга Куркина</cite>
           </blockquote>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-[#96AB88]">
+      <section className="section-padding bg-sage">
         <div className="container-site text-center">
           <h2 className="font-display text-white mb-4">
             Хотите такой же результат?
           </h2>
-          <p className="font-sans text-[#F7F0E6]/85 text-lg mb-8 max-w-xl mx-auto">
+          <p className="font-sans text-cream/85 text-lg mb-8 max-w-xl mx-auto">
             Запишитесь на бесплатную консультацию. Я расскажу, как клеточное питание
             может помочь именно вам.
           </p>
@@ -225,7 +225,7 @@ export default function AboutPage() {
               href={CONTACT.telegramPersonal}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#7A9270] rounded-full font-sans font-semibold text-lg hover:bg-[#F7F0E6] transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-sage-dark rounded-full font-sans font-semibold text-lg hover:bg-cream transition-colors"
             >
               Записаться в Telegram
             </a>

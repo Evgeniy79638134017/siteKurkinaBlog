@@ -21,16 +21,16 @@ export default function ProgramsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-[#F7F0E6]">
+      <section className="pt-32 pb-16 bg-cream">
         <div className="container-site">
           <div className="max-w-3xl">
-            <p className="font-sans text-sm font-semibold uppercase tracking-widest text-[#96AB88] mb-4">
+            <p className="font-sans text-sm font-semibold uppercase tracking-widest text-sage mb-4">
               Индивидуальный подход
             </p>
-            <h1 className="font-display text-[#2C1810] mb-6">
+            <h1 className="font-display text-dark mb-6">
               Программы здоровья
             </h1>
-            <p className="font-sans text-xl text-[#6B5B52] leading-relaxed max-w-2xl">
+            <p className="font-sans text-xl text-muted leading-relaxed max-w-2xl">
               Каждая программа построена на принципах клеточного питания и адаптирована
               под конкретный запрос. Никаких шаблонов — только ваши симптомы и цели.
             </p>
@@ -39,7 +39,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Как работает подход */}
-      <section className="py-14 bg-[#96AB88]">
+      <section className="py-14 bg-sage">
         <div className="container-site">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {[
@@ -70,7 +70,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Карточки программ */}
-      <section className="section-padding bg-[#F7F0E6]">
+      <section className="section-padding bg-cream">
         <div className="container-site">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {PROGRAMS.map((program) => (
@@ -82,27 +82,27 @@ export default function ProgramsPage() {
                 <div className="flex items-start gap-4 mb-5">
                   <div className="text-4xl flex-shrink-0">{ICONS[program.icon] ?? "🌿"}</div>
                   <div>
-                    <h2 className="font-display text-2xl text-[#2C1810]">
+                    <h2 className="font-display text-2xl text-dark">
                       {program.title}
                     </h2>
-                    <p className="font-sans text-sm text-[#96AB88]">{program.subtitle}</p>
+                    <p className="font-sans text-sm text-sage">{program.subtitle}</p>
                   </div>
                 </div>
 
-                <p className="font-sans text-[#6B5B52] leading-relaxed mb-6">
+                <p className="font-sans text-muted leading-relaxed mb-6">
                   {program.description}
                 </p>
 
                 {/* Проблемы */}
                 <div className="mb-5">
-                  <p className="font-sans text-xs font-semibold uppercase tracking-wider text-[#A58D7F] mb-2">
+                  <p className="font-sans text-xs font-semibold uppercase tracking-wider text-taupe mb-2">
                     Помогает при:
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {program.targetProblems.map((p) => (
                       <span
                         key={p}
-                        className="font-sans text-xs text-[#6B5B52] bg-[#F4E1C4] px-3 py-1 rounded-full"
+                        className="font-sans text-xs text-muted bg-beige px-3 py-1 rounded-full"
                       >
                         {p}
                       </span>
@@ -112,13 +112,13 @@ export default function ProgramsPage() {
 
                 {/* Результаты */}
                 <div className="mb-5">
-                  <p className="font-sans text-xs font-semibold uppercase tracking-wider text-[#A58D7F] mb-2">
+                  <p className="font-sans text-xs font-semibold uppercase tracking-wider text-taupe mb-2">
                     Результаты:
                   </p>
                   <ul className="space-y-1">
                     {program.results.map((r) => (
-                      <li key={r} className="font-sans text-sm text-[#2C1810] flex gap-2">
-                        <span className="text-[#96AB88] flex-shrink-0">✓</span>
+                      <li key={r} className="font-sans text-sm text-dark flex gap-2">
+                        <span className="text-sage flex-shrink-0">✓</span>
                         {r}
                       </li>
                     ))}
@@ -126,14 +126,14 @@ export default function ProgramsPage() {
                 </div>
 
                 {/* Срок + CTA */}
-                <div className="flex items-center justify-between pt-5 border-t border-[#E5D5C5]">
+                <div className="flex items-center justify-between pt-5 border-t border-border">
                   <div>
-                    <p className="font-sans text-xs text-[#A58D7F]">Срок программы</p>
-                    <p className="font-sans font-semibold text-[#2C1810]">{program.duration}</p>
+                    <p className="font-sans text-xs text-taupe">Срок программы</p>
+                    <p className="font-sans font-semibold text-dark">{program.duration}</p>
                   </div>
                   <Link
                     href={`/programs/${program.slug}`}
-                    className="font-sans font-semibold text-[#96AB88] hover:text-[#7A9270] transition-colors"
+                    className="font-sans font-semibold text-sage hover:text-sage-dark transition-colors"
                   >
                     Подробнее →
                   </Link>
@@ -148,12 +148,12 @@ export default function ProgramsPage() {
       <FAQSection />
 
       {/* CTA */}
-      <section className="section-padding bg-[#96AB88]">
+      <section className="section-padding bg-sage">
         <div className="container-site text-center">
           <h2 className="font-display text-white mb-4">
             Не знаете, какая программа подходит?
           </h2>
-          <p className="font-sans text-[#F7F0E6]/85 text-lg mb-8 max-w-xl mx-auto">
+          <p className="font-sans text-cream/85 text-lg mb-8 max-w-xl mx-auto">
             Запишитесь на бесплатную консультацию — вместе разберёмся с вашей ситуацией
             и подберём подходящее решение.
           </p>
@@ -161,7 +161,7 @@ export default function ProgramsPage() {
             href={CONTACT.telegramPersonal}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-white text-[#7A9270] rounded-full font-sans font-semibold text-lg hover:bg-[#F7F0E6] transition-colors"
+            className="inline-flex items-center px-8 py-4 bg-white text-sage-dark rounded-full font-sans font-semibold text-lg hover:bg-cream transition-colors"
           >
             Получить рекомендацию бесплатно
           </a>

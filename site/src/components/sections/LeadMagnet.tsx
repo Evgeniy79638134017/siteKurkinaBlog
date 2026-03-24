@@ -10,19 +10,19 @@ const CHECKLIST_ITEMS = [
 
 export function LeadMagnet() {
   return (
-    <section className="section-padding bg-[#96AB88]">
+    <section className="section-padding bg-sage">
       <div className="container-site">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
           {/* Левая часть */}
           <div>
-            <p className="font-sans text-sm font-semibold uppercase tracking-widest text-[#F7F0E6]/70 mb-3">
+            <p className="font-sans text-sm font-semibold uppercase tracking-widest text-cream/70 mb-3">
               Бесплатно
             </p>
             <h2 className="font-display text-white mb-4">
               Чек-лист здоровья для 50+
             </h2>
-            <p className="font-sans text-[#F7F0E6]/85 text-lg leading-relaxed mb-6">
+            <p className="font-sans text-cream/85 text-lg leading-relaxed mb-6">
               Получите мой авторский чек-лист «5 шагов к восстановлению здоровья» —
               и узнайте, с чего начать прямо сейчас.
             </p>
@@ -33,7 +33,7 @@ export function LeadMagnet() {
 
           {/* Правая часть — содержимое чек-листа */}
           <div className="bg-white/15 rounded-2xl p-8">
-            <p className="font-sans text-sm font-semibold uppercase tracking-wider text-[#F7F0E6]/70 mb-4">
+            <p className="font-sans text-sm font-semibold uppercase tracking-wider text-cream/70 mb-4">
               Что внутри:
             </p>
             <ul className="space-y-3">
@@ -44,7 +44,7 @@ export function LeadMagnet() {
                       {i + 1}
                     </span>
                   </span>
-                  <span className="font-sans text-[#F7F0E6] text-base leading-snug">
+                  <span className="font-sans text-cream text-base leading-snug">
                     {item}
                   </span>
                 </li>

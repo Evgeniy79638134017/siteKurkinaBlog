@@ -14,14 +14,14 @@ export function FinalCTA() {
           sizes="100vw"
         />
         {/* Оверлей */}
-        <div className="absolute inset-0 bg-black/40 bg-gradient-to-t from-[#2C1810]/80 via-[#2C1810]/40 to-transparent" />
+        <div className="absolute inset-0 bg-black/40 bg-gradient-to-t from-dark/80 via-dark/40 to-transparent" />
       </div>
 
       <div className="container-site relative z-10">
         <div className="max-w-3xl mx-auto text-center">
 
           {/* Подзаголовок */}
-          <p className="font-sans text-sm font-semibold uppercase tracking-widest text-[#F4E1C4] mb-4">
+          <p className="font-sans text-sm font-semibold uppercase tracking-widest text-beige mb-4">
             Первый шаг бесплатно
           </p>
 
@@ -41,7 +41,7 @@ export function FinalCTA() {
               href={CONTACT.telegramPersonal}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-10 py-4 bg-[#96AB88] text-white rounded-full font-sans font-semibold text-lg hover:bg-[#7A9270] hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 shadow-lg shadow-[#96AB88]/25"
+              className="inline-flex items-center px-10 py-4 bg-sage text-white rounded-full font-sans font-semibold text-lg hover:bg-sage-dark hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 shadow-lg shadow-sage/25"
             >
               Записаться на консультацию
             </a>

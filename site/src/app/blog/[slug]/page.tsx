@@ -23,6 +23,65 @@ export async function generateMetadata(
   };
 }
 
+function parseContent(content: string) {
+  const lines = content.trim().split("\n");
+  const elements: { type: "heading" | "list-item" | "paragraph"; text: string }[] = [];
+  let currentParagraph = "";
+
+  const flushParagraph = () => {
+    const trimmed = currentParagraph.trim();
+    if (trimmed) {
+      elements.push({ type: "paragraph", text: trimmed });
+    }
+    currentParagraph = "";
+  };
+
+  for (const line of lines) {
+    const headingMatch = line.match(/^## (.+)/);
+    const listMatch = line.match(/^\* \*\*(.+?)\*\*(.*)/) || line.match(/^(\d+)\. \*\*(.+?)\*\*(.*)/);
+
+    if (headingMatch) {
+      flushParagraph();
+      elements.push({ type: "heading", text: headingMatch[1] });
+    } else if (listMatch) {
+      flushParagraph();
+      elements.push({ type: "list-item", text: line });
+    } else if (line.trim() === "") {
+      flushParagraph();
+    } else {
+      currentParagraph += (currentParagraph ? " " : "") + line.trim();
+    }
+  }
+  flushParagraph();
+
+  return elements;
+}
+
+function renderListItem(text: string) {
+  // "* **Bold** rest" or "1. **Bold** rest"
+  const bulletMatch = text.match(/^\* \*\*(.+?)\*\*(.*)/);
+  const numberedMatch = text.match(/^(\d+)\. \*\*(.+?)\*\*(.*)/);
+
+  if (bulletMatch) {
+    return (
+      <>
+        <strong className="font-semibold text-dark">{bulletMatch[1]}</strong>
+        {bulletMatch[2]}
+      </>
+    );
+  }
+  if (numberedMatch) {
+    return (
+      <>
+        {numberedMatch[1]}.{" "}
+        <strong className="font-semibold text-dark">{numberedMatch[2]}</strong>
+        {numberedMatch[3]}
+      </>
+    );
+  }
+  return text;
+}
+
 export default async function BlogPostPage(
   props: { params: Promise<{ slug: string }> }
 ) {
@@ -33,31 +92,25 @@ export default async function BlogPostPage(
     notFound();
   }
 
-  // Простой парсинг markdown для текущей структуры постов
-  const formattedContent = post.content
-    ? post.content
-        .replace(/## (.*)/g, '<h2 className="font-display text-3xl text-[#2C1810] font-semibold mt-10 mb-4">$1</h2>')
-        .replace(/\* \*\*(.*?)\*\*(.*)/g, '<li className="mb-2"><strong className="text-[#2C1810] font-semibold">$1</strong>$2</li>')
-        .replace(/\n\n/g, '</p><p className="font-sans text-lg text-[#6B5B52] leading-relaxed mb-6">')
-    : "Контент в разработке.";
+  const contentElements = post.content ? parseContent(post.content) : [];
 
   return (
     <>
-      <article className="pt-32 pb-16 bg-[#F7F0E6]">
+      <article className="pt-32 pb-16 bg-cream">
         <div className="container-site max-w-3xl">
           <Link
             href="/blog"
-            className="inline-flex items-center text-sm font-sans font-semibold text-[#96AB88] hover:text-[#7A9270] transition-colors mb-8"
+            className="inline-flex items-center text-sm font-sans font-semibold text-sage hover:text-sage-dark transition-colors mb-8"
           >
             ← Все статьи
           </Link>
 
           <div className="flex flex-wrap items-center gap-4 mb-6">
-            <span className="font-sans text-xs font-semibold uppercase tracking-wider text-[#96AB88] bg-[#96AB88]/10 px-3 py-1 rounded-full">
+            <span className="font-sans text-xs font-semibold uppercase tracking-wider text-sage bg-sage/10 px-3 py-1 rounded-full">
               {post.tags[0]}
             </span>
-            <span className="font-sans text-xs text-[#A58D7F]">{post.readTime}</span>
-            <span className="font-sans text-xs text-[#A58D7F]">
+            <span className="font-sans text-xs text-taupe">{post.readTime}</span>
+            <span className="font-sans text-xs text-taupe">
               {new Date(post.date).toLocaleDateString("ru-RU", {
                 day: "numeric",
                 month: "long",
@@ -66,8 +119,8 @@ export default async function BlogPostPage(
             </span>
           </div>
 
-          <h1 className="font-display text-4xl md:text-5xl text-[#2C1810] mb-8 leading-tight">{post.title}</h1>
-          <p className="font-sans text-xl text-[#6B5B52] leading-relaxed mb-6 font-medium">
+          <h1 className="font-display text-4xl md:text-5xl text-dark mb-8 leading-tight">{post.title}</h1>
+          <p className="font-sans text-xl text-muted leading-relaxed mb-6 font-medium">
             {post.excerpt}
           </p>
         </div>
@@ -75,26 +128,59 @@ export default async function BlogPostPage(
 
       <section className="section-padding bg-white">
         <div className="container-site max-w-3xl">
-          
-          <div 
-            className="font-sans text-lg text-[#6B5B52] leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: `<p className="font-sans text-lg text-[#6B5B52] leading-relaxed mb-6">${formattedContent}</p>` }}
-          />
+          <div className="space-y-6">
+            {contentElements.length > 0 ? (
+              contentElements.map((el, i) => {
+                if (el.type === "heading") {
+                  return (
+                    <h2
+                      key={i}
+                      className="font-display text-3xl text-dark font-semibold mt-10 mb-4"
+                    >
+                      {el.text}
+                    </h2>
+                  );
+                }
+                if (el.type === "list-item") {
+                  return (
+                    <li
+                      key={i}
+                      className="mb-2 font-sans text-lg text-muted leading-relaxed list-disc ml-6"
+                    >
+                      {renderListItem(el.text)}
+                    </li>
+                  );
+                }
+                return (
+                  <p
+                    key={i}
+                    className="font-sans text-lg text-muted leading-relaxed"
+                  >
+                    {el.text}
+                  </p>
+                );
+              })
+            ) : (
+              <p className="font-sans text-lg text-muted leading-relaxed">
+                Контент в разработке.
+              </p>
+            )}
+          </div>
 
-          <hr className="my-16 border-[#E5D5C5]" />
-          
-          <div className="bg-[#F4E1C4] rounded-2xl p-8 md:p-10 text-center">
-            <h3 className="font-display text-2xl text-[#2C1810] mb-4">
+          <hr className="my-16 border-border" />
+
+          <div className="bg-beige rounded-2xl p-8 md:p-10 text-center">
+            <h3 className="font-display text-2xl text-dark mb-4">
               Хотите персональный разбор?
             </h3>
-            <p className="font-sans text-[#6B5B52] text-lg mb-8">
+            <p className="font-sans text-muted text-lg mb-8">
               Запишитесь на бесплатную консультацию. Я выслушаю вашу ситуацию и подскажу, с чего начать восстановление.
             </p>
             <a
               href={CONTACT.telegramPersonal}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 bg-[#96AB88] text-white rounded-full font-sans font-semibold hover:bg-[#7A9270] transition-colors"
+              className="inline-flex items-center px-8 py-4 bg-sage text-white rounded-full font-sans font-semibold hover:bg-sage-dark transition-colors"
             >
               Написать мне лично
             </a>

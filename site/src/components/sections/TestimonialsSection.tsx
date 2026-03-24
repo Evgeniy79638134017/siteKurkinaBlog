@@ -8,7 +8,7 @@ export function TestimonialsSection() {
   const cases = getFeaturedCases();
 
   return (
-    <section className="section-padding bg-[#F4E1C4]">
+    <section className="section-padding bg-beige">
       <div className="container-site">
 
         {/* Заголовок */}
@@ -19,13 +19,13 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center max-w-2xl mx-auto mb-12 md:mb-16"
         >
-          <p className="font-sans text-sm font-semibold uppercase tracking-widest text-[#96AB88] mb-3">
+          <p className="font-sans text-sm font-semibold uppercase tracking-widest text-sage mb-3">
             Реальные результаты
           </p>
-          <h2 className="font-display text-[#2C1810] mb-4">
+          <h2 className="font-display text-dark mb-4">
             Истории клиентов
           </h2>
-          <p className="font-sans text-[#6B5B52] text-lg">
+          <p className="font-sans text-muted text-lg">
             Не обещания, а факты. Реальные люди — реальные изменения.
           </p>
         </motion.div>
@@ -43,31 +43,31 @@ export function TestimonialsSection() {
             >
               {/* Заголовок кейса */}
               <div className="mb-5">
-                <p className="font-display text-xl text-[#2C1810] font-semibold mb-0.5">
+                <p className="font-display text-xl text-dark font-semibold mb-0.5">
                   {c.name}
                   {c.age > 0 && (
-                    <span className="font-sans text-sm text-[#A58D7F] font-normal ml-2">
+                    <span className="font-sans text-sm text-taupe font-normal ml-2">
                       {c.age} лет
                     </span>
                   )}
                   {c.location && (
-                    <span className="font-sans text-sm text-[#A58D7F] font-normal ml-1">
+                    <span className="font-sans text-sm text-taupe font-normal ml-1">
                       · {c.location}
                     </span>
                   )}
                 </p>
-                <p className="font-sans text-sm text-[#A58D7F]">{c.problem}</p>
+                <p className="font-sans text-sm text-taupe">{c.problem}</p>
               </div>
 
               {/* Проблемы */}
               <div className="mb-4">
-                <p className="font-sans text-xs font-semibold uppercase tracking-wider text-[#A58D7F] mb-2">
+                <p className="font-sans text-xs font-semibold uppercase tracking-wider text-taupe mb-2">
                   Было:
                 </p>
                 <ul className="space-y-1.5">
                   {c.problems.slice(0, 2).map((p, i) => (
-                    <li key={i} className="font-sans text-[#6B5B52] text-sm flex gap-2">
-                      <span className="text-[#D08C60] flex-shrink-0">✕</span>
+                    <li key={i} className="font-sans text-muted text-sm flex gap-2">
+                      <span className="text-terra flex-shrink-0">✕</span>
                       {p}
                     </li>
                   ))}
@@ -76,13 +76,13 @@ export function TestimonialsSection() {
 
               {/* Результаты */}
               <div className="mb-5 flex-1">
-                <p className="font-sans text-xs font-semibold uppercase tracking-wider text-[#A58D7F] mb-2">
+                <p className="font-sans text-xs font-semibold uppercase tracking-wider text-taupe mb-2">
                   Стало:
                 </p>
                 <ul className="space-y-1.5">
                   {c.results.slice(0, 3).map((r, i) => (
-                    <li key={i} className="font-sans text-[#2C1810] text-sm flex gap-2">
-                      <span className="text-[#96AB88] flex-shrink-0">✓</span>
+                    <li key={i} className="font-sans text-dark text-sm flex gap-2">
+                      <span className="text-sage flex-shrink-0">✓</span>
                       {r}
                     </li>
                   ))}
@@ -90,14 +90,14 @@ export function TestimonialsSection() {
               </div>
 
               {/* Цитата */}
-              <blockquote className="border-l-2 border-[#C9A84C] pl-4 mt-auto">
-                <p className="font-display text-base italic text-[#6B5B52] leading-snug">
+              <blockquote className="border-l-2 border-gold pl-4 mt-auto">
+                <p className="font-display text-base italic text-muted leading-snug">
                   «{c.quote}»
                 </p>
               </blockquote>
 
               {/* Срок */}
-              <p className="font-sans text-xs text-[#A58D7F] mt-3">
+              <p className="font-sans text-xs text-taupe mt-3">
                 Срок: {c.duration}
               </p>
             </motion.div>
@@ -108,7 +108,7 @@ export function TestimonialsSection() {
         <div className="text-center">
           <Link
             href="/results"
-            className="inline-flex items-center gap-2 font-sans font-semibold text-[#96AB88] hover:text-[#7A9270] transition-colors text-lg"
+            className="inline-flex items-center gap-2 font-sans font-semibold text-sage hover:text-sage-dark transition-colors text-lg"
           >
             Смотреть все результаты →
           </Link>

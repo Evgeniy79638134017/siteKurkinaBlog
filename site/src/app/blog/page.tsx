@@ -13,16 +13,16 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-[#F7F0E6]">
+      <section className="pt-32 pb-16 bg-cream">
         <div className="container-site">
           <div className="max-w-2xl">
-            <p className="font-sans text-sm font-semibold uppercase tracking-widest text-[#96AB88] mb-4">
+            <p className="font-sans text-sm font-semibold uppercase tracking-widest text-sage mb-4">
               Полезные материалы
             </p>
-            <h1 className="font-display text-[#2C1810] mb-6">
+            <h1 className="font-display text-dark mb-6">
               Блог
             </h1>
-            <p className="font-sans text-xl text-[#6B5B52] leading-relaxed">
+            <p className="font-sans text-xl text-muted leading-relaxed">
               Статьи о биохакинге, клеточном питании и активном долголетии.
               Всё основано на личном опыте и реальных историях клиентов.
             </p>
@@ -31,7 +31,7 @@ export default function BlogPage() {
       </section>
 
       {/* Статьи */}
-      <section className="section-padding bg-[#F4E1C4]">
+      <section className="section-padding bg-beige">
         <div className="container-site">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {POSTS.map((post) => (
@@ -42,32 +42,32 @@ export default function BlogPage() {
               >
                 {/* Шапка */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-sans text-xs font-semibold uppercase tracking-wider text-[#96AB88] bg-[#96AB88]/10 px-3 py-1 rounded-full">
+                  <span className="font-sans text-xs font-semibold uppercase tracking-wider text-sage bg-sage/10 px-3 py-1 rounded-full">
                     {post.tags[0]}
                   </span>
-                  <span className="font-sans text-xs text-[#A58D7F]">{post.readTime}</span>
+                  <span className="font-sans text-xs text-taupe">{post.readTime}</span>
                 </div>
 
                 {/* Заголовок */}
-                <h2 className="font-display text-xl text-[#2C1810] mb-3 leading-snug group-hover:text-[#96AB88] transition-colors flex-1">
+                <h2 className="font-display text-xl text-dark mb-3 leading-snug group-hover:text-sage transition-colors flex-1">
                   {post.title}
                 </h2>
 
                 {/* Описание */}
-                <p className="font-sans text-[#6B5B52] text-sm leading-relaxed mb-5">
+                <p className="font-sans text-muted text-sm leading-relaxed mb-5">
                   {post.excerpt}
                 </p>
 
                 {/* Дата + ссылка */}
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-[#E5D5C5]">
-                  <span className="font-sans text-xs text-[#A58D7F]">
+                <div className="flex items-center justify-between mt-auto pt-4 border-t border-border">
+                  <span className="font-sans text-xs text-taupe">
                     {new Date(post.date).toLocaleDateString("ru-RU", {
                       day: "numeric",
                       month: "long",
                       year: "numeric",
                     })}
                   </span>
-                  <span className="font-sans text-sm font-semibold text-[#96AB88] group-hover:text-[#7A9270] transition-colors">
+                  <span className="font-sans text-sm font-semibold text-sage group-hover:text-sage-dark transition-colors">
                     Читать →
                   </span>
                 </div>
@@ -78,7 +78,7 @@ export default function BlogPage() {
       </section>
 
       {/* CTA — подписаться */}
-      <section className="section-padding bg-[#96AB88]">
+      <section className="section-padding bg-sage">
         <div className="container-site text-center">
           <h2 className="font-display text-white mb-4">
             Новые статьи — в Telegram-канале
@@ -90,7 +90,7 @@ export default function BlogPage() {
             href={CONTACT.telegramChannel}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-white text-[#7A9270] rounded-full font-sans font-semibold text-lg hover:bg-[#F7F0E6] transition-colors"
+            className="inline-flex items-center px-8 py-4 bg-white text-sage-dark rounded-full font-sans font-semibold text-lg hover:bg-cream transition-colors"
           >
             Подписаться на канал
           </a>

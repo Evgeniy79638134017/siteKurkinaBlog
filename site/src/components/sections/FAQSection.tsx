@@ -32,27 +32,27 @@ const FAQ_ITEMS = [
 
 export function FAQSection() {
   return (
-    <section className="section-padding bg-[#F4E1C4]">
+    <section className="section-padding bg-beige">
       <div className="container-site">
         <div className="max-w-3xl mx-auto">
           
           <div className="text-center mb-10">
-            <h2 className="font-display text-[#2C1810] mb-4">
+            <h2 className="font-display text-dark mb-4">
               Частые вопросы
             </h2>
-            <p className="font-sans text-lg text-[#6B5B52]">
+            <p className="font-sans text-lg text-muted">
               Всё, что обычно спрашивают перед началом работы
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-[#E5D5C5]/50">
+          <div className="bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-border/50">
             <Accordion type="single" collapsible className="w-full">
               {FAQ_ITEMS.map((item, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="border-[#E5D5C5]">
-                  <AccordionTrigger className="font-sans font-semibold text-lg text-[#2C1810] hover:text-[#96AB88] text-left hover:no-underline py-5">
+                <AccordionItem key={index} value={`item-${index}`} className="border-border">
+                  <AccordionTrigger className="font-sans font-semibold text-lg text-dark hover:text-sage text-left hover:no-underline py-5">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="font-sans text-base text-[#6B5B52] leading-relaxed pb-6">
+                  <AccordionContent className="font-sans text-base text-muted leading-relaxed pb-6">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>

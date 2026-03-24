@@ -44,7 +44,7 @@ function AnimatedCounter({ value }: { value: string }) {
 
 export function TrustBar() {
   return (
-    <section className="bg-[#96AB88] py-12">
+    <section className="bg-sage py-12">
       <div className="container-site">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
           {STATS.map((stat, i) => (

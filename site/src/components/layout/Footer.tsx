@@ -29,7 +29,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#2C1810] text-[#F7F0E6]">
+    <footer className="bg-dark text-cream">
       <div className="container-site py-12 md:py-16">
 
         {/* Верхний блок */}
@@ -54,7 +54,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[#D4C4B8] hover:text-white text-[15px] transition-colors"
+                    className="text-cream-dark hover:text-white text-[15px] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -72,7 +72,7 @@ export function Footer() {
               <li>
                 <a
                   href={`tel:${CONTACT.phone}`}
-                  className="text-[#D4C4B8] hover:text-white text-[15px] transition-colors"
+                  className="text-cream-dark hover:text-white text-[15px] transition-colors"
                 >
                   {CONTACT.phoneDisplay}
                 </a>
@@ -82,7 +82,7 @@ export function Footer() {
                   href={CONTACT.telegramPersonal}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#D4C4B8] hover:text-white text-[15px] transition-colors"
+                  className="text-cream-dark hover:text-white text-[15px] transition-colors"
                 >
                   {CONTACT.telegramHandle}
                 </a>
@@ -96,7 +96,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Telegram-канал"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-[#D4C4B8] hover:bg-[#96AB88] hover:text-white transition-colors"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-cream-dark hover:bg-sage hover:text-white transition-colors"
               >
                 <TelegramIcon />
               </a>
@@ -105,7 +105,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Telegram личный"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-[#D4C4B8] hover:bg-[#96AB88] hover:text-white transition-colors"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-cream-dark hover:bg-sage hover:text-white transition-colors"
               >
                 <TelegramIcon />
               </a>
@@ -114,7 +114,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-[#D4C4B8] hover:bg-[#96AB88] hover:text-white transition-colors"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-cream-dark hover:bg-sage hover:text-white transition-colors"
               >
                 <InstagramIcon />
               </a>
@@ -123,7 +123,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-[#D4C4B8] hover:bg-[#96AB88] hover:text-white transition-colors"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-cream-dark hover:bg-sage hover:text-white transition-colors"
               >
                 <TikTokIcon />
               </a>

@@ -18,9 +18,7 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <header
@@ -28,7 +26,7 @@ export function Header() {
         "fixed top-0 left-0 right-0 z-50 transition-all",
         "duration-300",
         scrolled
-          ? "bg-[#F7F0E6]/95 backdrop-blur-md shadow-[0_2px_20px_rgba(44,24,16,0.08)]"
+          ? "bg-cream/95 backdrop-blur-md shadow-[0_2px_20px_rgba(44,24,16,0.08)]"
           : "bg-transparent"
       )}
     >
@@ -37,10 +35,10 @@ export function Header() {
 
           {/* Логотип */}
           <Link href="/" className="flex flex-col leading-tight group">
-            <span className="font-display text-xl md:text-2xl font-semibold text-[#2C1810] group-hover:text-[#96AB88] transition-colors">
+            <span className="font-display text-xl md:text-2xl font-semibold text-dark group-hover:text-sage transition-colors">
               Ольга Куркина
             </span>
-            <span className="font-sans text-[13px] text-[#6B5B52] tracking-wide">
+            <span className="font-sans text-[13px] text-muted tracking-wide">
               Нутрициолог · Биохакинг 50+
             </span>
           </Link>
@@ -55,8 +53,8 @@ export function Header() {
                   "relative px-4 py-2 font-sans text-[15px] font-medium transition-colors duration-200",
                   "after:absolute after:bottom-0 after:left-4 after:right-4 after:h-[2px] after:rounded-full after:transition-all after:duration-200",
                   pathname === link.href
-                    ? "text-[#2C1810] after:bg-[#C9A84C]"
-                    : "text-[#6B5B52] hover:text-[#2C1810] after:bg-transparent hover:after:bg-[#C9A84C]/50"
+                    ? "text-dark after:bg-gold"
+                    : "text-muted hover:text-dark after:bg-transparent hover:after:bg-gold/50"
                 )}
               >
                 {link.label}
@@ -70,13 +68,13 @@ export function Header() {
               href={CONTACT.telegramPersonal}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center px-5 py-2.5 bg-[#96AB88] text-white rounded-full font-sans text-[15px] font-semibold hover:bg-[#7A9270] hover:scale-[1.04] active:scale-[0.97] transition-all duration-200"
+              className="hidden sm:inline-flex items-center px-5 py-2.5 bg-sage text-white rounded-full font-sans text-[15px] font-semibold hover:bg-sage-dark hover:scale-[1.04] active:scale-[0.97] transition-all duration-200"
             >
               Записаться
             </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-[#2C1810] hover:text-[#96AB88] transition-colors"
+              className="lg:hidden p-2 text-dark hover:text-sage transition-colors"
               aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
               aria-expanded={isOpen}
             >
@@ -88,17 +86,18 @@ export function Header() {
 
       {/* Мобильное меню */}
       {isOpen && (
-        <div className="lg:hidden bg-[#F7F0E6] border-t border-[#E5D5C5] shadow-lg">
+        <div className="lg:hidden bg-cream border-t border-border shadow-lg">
           <nav className="container-site py-4 flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={closeMenu}
                 className={cn(
                   "px-4 py-3 rounded-xl font-sans text-base font-medium transition-colors",
                   pathname === link.href
-                    ? "bg-[#96AB88]/15 text-[#7A9270]"
-                    : "text-[#2C1810] hover:bg-[#F4E1C4]"
+                    ? "bg-sage/15 text-sage-dark"
+                    : "text-dark hover:bg-beige"
                 )}
               >
                 {link.label}
@@ -108,7 +107,7 @@ export function Header() {
               href={CONTACT.telegramPersonal}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 text-center py-3.5 bg-[#96AB88] text-white rounded-full font-sans font-semibold hover:bg-[#7A9270] transition-colors"
+              className="mt-3 text-center py-3.5 bg-sage text-white rounded-full font-sans font-semibold hover:bg-sage-dark transition-colors"
             >
               Записаться на консультацию
             </a>

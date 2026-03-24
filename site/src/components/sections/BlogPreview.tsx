@@ -32,22 +32,22 @@ const PREVIEW_POSTS = [
 
 export function BlogPreview() {
   return (
-    <section className="section-padding bg-[#F7F0E6]">
+    <section className="section-padding bg-cream">
       <div className="container-site">
 
         {/* Заголовок */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
           <div>
-            <p className="font-sans text-sm font-semibold uppercase tracking-widest text-[#96AB88] mb-3">
+            <p className="font-sans text-sm font-semibold uppercase tracking-widest text-sage mb-3">
               Блог
             </p>
-            <h2 className="font-display text-[#2C1810]">
+            <h2 className="font-display text-dark">
               Полезные статьи
             </h2>
           </div>
           <Link
             href="/blog"
-            className="font-sans font-semibold text-[#96AB88] hover:text-[#7A9270] transition-colors flex-shrink-0"
+            className="font-sans font-semibold text-sage hover:text-sage-dark transition-colors flex-shrink-0"
           >
             Все статьи →
           </Link>
@@ -69,26 +69,26 @@ export function BlogPreview() {
             >
               {/* Тег и время */}
               <div className="flex items-center justify-between mb-4">
-                <span className="font-sans text-xs font-semibold uppercase tracking-wider text-[#96AB88] bg-[#96AB88]/10 px-3 py-1 rounded-full">
+                <span className="font-sans text-xs font-semibold uppercase tracking-wider text-sage bg-sage/10 px-3 py-1 rounded-full">
                   {post.tag}
                 </span>
-                <span className="font-sans text-xs text-[#A58D7F]">
+                <span className="font-sans text-xs text-taupe">
                   {post.readTime}
                 </span>
               </div>
 
               {/* Заголовок */}
-              <h3 className="font-display text-xl text-[#2C1810] mb-3 leading-snug group-hover:text-[#96AB88] transition-colors flex-1">
+              <h3 className="font-display text-xl text-dark mb-3 leading-snug group-hover:text-sage transition-colors flex-1">
                 {post.title}
               </h3>
 
               {/* Описание */}
-              <p className="font-sans text-[#6B5B52] text-sm leading-relaxed mb-4">
+              <p className="font-sans text-muted text-sm leading-relaxed mb-4">
                 {post.excerpt}
               </p>
 
               {/* Ссылка */}
-              <span className="font-sans text-sm font-semibold text-[#96AB88] group-hover:text-[#7A9270] transition-colors mt-auto">
+              <span className="font-sans text-sm font-semibold text-sage group-hover:text-sage-dark transition-colors mt-auto">
                 Читать →
               </span>
             </Link>

@@ -38,21 +38,21 @@ export default async function ProgramPage({ params }: Props) {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-[#F7F0E6]">
+      <section className="pt-32 pb-16 bg-cream">
         <div className="container-site">
           <Link
             href="/programs"
-            className="inline-flex items-center gap-1 font-sans text-sm text-[#96AB88] hover:text-[#7A9270] transition-colors mb-8"
+            className="inline-flex items-center gap-1 font-sans text-sm text-sage hover:text-sage-dark transition-colors mb-8"
           >
             ← Все программы
           </Link>
           <div className="max-w-3xl">
             <div className="text-5xl mb-4">{ICONS[program.icon] ?? "🌿"}</div>
-            <h1 className="font-display text-[#2C1810] mb-2">
+            <h1 className="font-display text-dark mb-2">
               {program.title}
             </h1>
-            <p className="font-sans text-xl text-[#96AB88] mb-4">{program.subtitle}</p>
-            <p className="font-sans text-xl text-[#6B5B52] leading-relaxed max-w-2xl">
+            <p className="font-sans text-xl text-sage mb-4">{program.subtitle}</p>
+            <p className="font-sans text-xl text-muted leading-relaxed max-w-2xl">
               {program.description}
             </p>
           </div>
@@ -60,37 +60,37 @@ export default async function ProgramPage({ params }: Props) {
       </section>
 
       {/* Для кого */}
-      <section className="section-padding bg-[#F4E1C4]">
+      <section className="section-padding bg-beige">
         <div className="container-site">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
             <div>
-              <h2 className="font-display text-[#2C1810] mb-6">
+              <h2 className="font-display text-dark mb-6">
                 Программа помогает при:
               </h2>
               <ul className="space-y-3">
                 {program.targetProblems.map((p) => (
                   <li key={p} className="flex gap-3 items-start">
-                    <span className="w-6 h-6 rounded-full bg-[#D08C60]/15 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-[#D08C60] text-sm">✕</span>
+                    <span className="w-6 h-6 rounded-full bg-terra/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-terra text-sm">✕</span>
                     </span>
-                    <span className="font-sans text-[#6B5B52] text-lg">{p}</span>
+                    <span className="font-sans text-muted text-lg">{p}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div>
-              <h2 className="font-display text-[#2C1810] mb-6">
+              <h2 className="font-display text-dark mb-6">
                 Вы получите:
               </h2>
               <ul className="space-y-3">
                 {program.results.map((r) => (
                   <li key={r} className="flex gap-3 items-start">
-                    <span className="w-6 h-6 rounded-full bg-[#96AB88]/15 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-[#96AB88] text-sm">✓</span>
+                    <span className="w-6 h-6 rounded-full bg-sage/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-sage text-sm">✓</span>
                     </span>
-                    <span className="font-sans text-[#2C1810] text-lg">{r}</span>
+                    <span className="font-sans text-dark text-lg">{r}</span>
                   </li>
                 ))}
               </ul>
@@ -101,27 +101,27 @@ export default async function ProgramPage({ params }: Props) {
       </section>
 
       {/* 3 шага */}
-      <section className="section-padding bg-[#F7F0E6]">
+      <section className="section-padding bg-cream">
         <div className="container-site">
           <div className="max-w-xl mb-10">
-            <h2 className="font-display text-[#2C1810] mb-2">
+            <h2 className="font-display text-dark mb-2">
               Как проходит работа
             </h2>
-            <p className="font-sans text-[#A58D7F]">Срок программы: {program.duration}</p>
+            <p className="font-sans text-taupe">Срок программы: {program.duration}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {program.steps.map((step) => (
               <div key={step.step} className="bg-white rounded-2xl p-7 shadow-[0_4px_20px_rgba(44,24,16,0.06)]">
-                <div className="w-12 h-12 rounded-full bg-[#96AB88]/15 flex items-center justify-center mb-5">
-                  <span className="font-display text-xl font-semibold text-[#96AB88]">
+                <div className="w-12 h-12 rounded-full bg-sage/15 flex items-center justify-center mb-5">
+                  <span className="font-display text-xl font-semibold text-sage">
                     0{step.step}
                   </span>
                 </div>
-                <h3 className="font-display text-xl text-[#2C1810] mb-2">
+                <h3 className="font-display text-xl text-dark mb-2">
                   {step.title}
                 </h3>
-                <p className="font-sans text-[#6B5B52] leading-relaxed">
+                <p className="font-sans text-muted leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -131,7 +131,7 @@ export default async function ProgramPage({ params }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-[#96AB88]">
+      <section className="section-padding bg-sage">
         <div className="container-site text-center">
           <h2 className="font-display text-white mb-4">
             Начните с бесплатной консультации
@@ -145,7 +145,7 @@ export default async function ProgramPage({ params }: Props) {
               href={CONTACT.telegramPersonal}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#96AB88] text-white rounded-full font-sans font-semibold text-lg hover:bg-[#7A9270] transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 bg-sage text-white rounded-full font-sans font-semibold text-lg hover:bg-sage-dark transition-colors"
             >
               Записаться в Telegram
             </a>

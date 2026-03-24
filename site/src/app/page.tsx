@@ -7,6 +7,7 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { LeadMagnet } from "@/components/sections/LeadMagnet";
 import { BlogPreview } from "@/components/sections/BlogPreview";
+import { FAQSection } from "@/components/sections/FAQSection";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 
@@ -20,6 +21,7 @@ export default function HomePage() {
       <ProgramsSection />
       <AnimatedSection><HowItWorks /></AnimatedSection>
       <TestimonialsSection />
+      <AnimatedSection><FAQSection /></AnimatedSection>
       <AnimatedSection><LeadMagnet /></AnimatedSection>
       <BlogPreview />
       <AnimatedSection><FinalCTA /></AnimatedSection>

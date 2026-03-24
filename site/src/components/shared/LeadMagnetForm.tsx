@@ -36,17 +36,30 @@ export function LeadMagnetForm() {
 
   async function onSubmit(values: FormValues) {
     setIsSubmitting(true);
-    // Имитация отправки
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log("Lead Magnet Subscribe:", values);
-    
-    toast.success("Чек-лист отправлен!", {
-      description: "Проверьте вашу почту (включая папку Спам).",
-      style: { backgroundColor: "#F7F0E6", color: "#2C1810", border: "1px solid #E5D5C5" }
-    });
-    
-    form.reset();
-    setIsSubmitting(false);
+    try {
+      const res = await fetch("/api/lead-magnet", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Ошибка отправки");
+      }
+
+      toast.success("Чек-лист отправлен!", {
+        description: "Проверьте вашу почту (включая папку Спам).",
+        style: { backgroundColor: "var(--color-cream)", color: "var(--color-dark)", border: "1px solid var(--color-border)" }
+      });
+      form.reset();
+    } catch {
+      toast.error("Не удалось отправить чек-лист", {
+        description: "Попробуйте позже.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -89,7 +102,7 @@ export function LeadMagnetForm() {
 
         <Button 
           type="submit" 
-          className="w-full bg-white hover:bg-[#F7F0E6] text-[#7A9270] rounded-full h-14 text-lg font-sans font-semibold transition-colors mt-2"
+          className="w-full bg-white hover:bg-cream text-sage-dark rounded-full h-14 text-lg font-sans font-semibold transition-colors mt-2"
           disabled={isSubmitting}
         >
           {isSubmitting ? "Отправка..." : "Получить чек-лист"}
