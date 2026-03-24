@@ -125,31 +125,33 @@ body {
 }
 
 /* Типографика */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--color-dark);
-}
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-dark);
+  }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
-h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
-h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+  h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+  h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
+  h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+  h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 
-p {
-  color: var(--color-dark);
-  line-height: 1.75;
-}
+  p {
+    color: var(--color-dark);
+    line-height: 1.75;
+  }
 
-a {
-  color: var(--color-sage-dark);
-  text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-smooth);
-}
+  a {
+    color: var(--color-sage-dark);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-smooth);
+  }
 
-a:hover {
-  color: var(--color-terra);
+  a:hover {
+    color: var(--color-terra);
+  }
 }
 
 /* Выделение текста */
