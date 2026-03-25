@@ -57,8 +57,32 @@ function parseContent(content: string) {
   return elements;
 }
 
+function renderInlineMarkdown(text: string): React.ReactNode[] {
+  const parts: React.ReactNode[] = [];
+  const regex = /\*\*(.+?)\*\*/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    parts.push(
+      <strong key={match.index} className="font-semibold text-dark">
+        {match[1]}
+      </strong>
+    );
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : [text];
+}
+
 function renderListItem(text: string) {
-  // "* **Bold** rest" or "1. **Bold** rest"
   const bulletMatch = text.match(/^\* \*\*(.+?)\*\*(.*)/);
   const numberedMatch = text.match(/^(\d+)\. \*\*(.+?)\*\*(.*)/);
 
@@ -79,7 +103,7 @@ function renderListItem(text: string) {
       </>
     );
   }
-  return text;
+  return <>{renderInlineMarkdown(text)}</>;
 }
 
 export default async function BlogPostPage(
@@ -156,7 +180,7 @@ export default async function BlogPostPage(
                     key={i}
                     className="font-sans text-lg text-muted leading-relaxed"
                   >
-                    {el.text}
+                    {renderInlineMarkdown(el.text)}
                   </p>
                 );
               })
