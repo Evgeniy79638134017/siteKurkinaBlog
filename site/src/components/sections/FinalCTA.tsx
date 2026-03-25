@@ -10,7 +10,7 @@ export function FinalCTA() {
           src="/images/vitality-olga.png"
           alt="Витальность и энергия 50+"
           fill
-          className="object-cover object-top"
+          className="object-cover object-[center_30%]"
           sizes="100vw"
         />
         {/* Оверлей */}

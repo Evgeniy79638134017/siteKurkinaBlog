@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { Bone, HeartPulse, Wallet } from "lucide-react";
 
 const PAINS = [
   {
-    emoji: "🦴",
+    icon: Bone,
     title: "Боли в суставах",
     description:
       "Просыпаетесь с болью, ограниченной подвижностью. Врачи говорят «пожизненно на таблетках». Но есть другой путь.",
@@ -10,7 +11,7 @@ const PAINS = [
     href: "/programs/joints",
   },
   {
-    emoji: "❤️",
+    icon: HeartPulse,
     title: "Давление и сердце",
     description:
       "Скачет давление, шум в ушах, тахикардия. Привычные таблетки дают побочки, а проблема остаётся.",
@@ -18,7 +19,7 @@ const PAINS = [
     href: "/programs/pressure",
   },
   {
-    emoji: "💰",
+    icon: Wallet,
     title: "Финансы на пенсии",
     description:
       "12 000 ₽ пенсии. Зависимость от детей. Ощущение, что лучшее позади. Но в 50+ можно начать всё заново.",
@@ -52,7 +53,9 @@ export function PainSection() {
               key={pain.title}
               className="bg-white rounded-2xl p-8 shadow-[0_4px_20px_rgba(44,24,16,0.08)] flex flex-col"
             >
-              <div className="text-4xl mb-4">{pain.emoji}</div>
+              <div className="w-12 h-12 rounded-xl bg-sage/10 flex items-center justify-center mb-4">
+                <pain.icon className="w-6 h-6 text-sage" strokeWidth={1.5} />
+              </div>
               <h3 className="font-display text-2xl text-dark mb-3">
                 {pain.title}
               </h3>

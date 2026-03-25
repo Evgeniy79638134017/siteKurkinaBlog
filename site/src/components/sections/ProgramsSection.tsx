@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
+import { Bone, HeartPulse, Zap, Sparkles, Leaf, type LucideIcon } from "lucide-react";
 import { PROGRAMS } from "@/lib/content/programs";
 
-const ICONS: Record<string, string> = {
-  activity: "🦴",
-  heart: "❤️",
-  zap: "⚡",
-  sparkles: "✨",
+const ICONS: Record<string, LucideIcon> = {
+  activity: Bone,
+  heart: HeartPulse,
+  zap: Zap,
+  sparkles: Sparkles,
 };
 
 export function ProgramsSection() {
@@ -47,7 +48,14 @@ export function ProgramsSection() {
               transition={{ duration: 0.5, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="bg-white rounded-2xl p-6 shadow-[0_4px_20px_rgba(44,24,16,0.08)] flex flex-col hover:shadow-[0_20px_60px_rgba(44,24,16,0.14)] hover:-translate-y-1.5 transition-all duration-300"
             >
-              <div className="text-3xl mb-4">{ICONS[program.icon] ?? "🌿"}</div>
+              {(() => {
+                const Icon = ICONS[program.icon] ?? Leaf;
+                return (
+                  <div className="w-12 h-12 rounded-xl bg-sage/10 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-sage" strokeWidth={1.5} />
+                  </div>
+                );
+              })()}
               <h3 className="font-display text-2xl text-dark mb-1">
                 {program.title}
               </h3>
