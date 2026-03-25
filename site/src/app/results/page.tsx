@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { Check, X } from "lucide-react";
 import { CASES } from "@/lib/content/cases";
 import { CONTACT } from "@/lib/constants";
 
@@ -104,7 +105,7 @@ export default function ResultsPage() {
                     <ul className="space-y-1">
                       {c.problems.map((p, i) => (
                         <li key={i} className="font-sans text-sm text-muted flex gap-1.5">
-                          <span className="text-terra flex-shrink-0">✕</span>
+                          <X className="w-4 h-4 text-terra shrink-0 mt-0.5" strokeWidth={2.5} />
                           {p}
                         </li>
                       ))}
@@ -117,7 +118,7 @@ export default function ResultsPage() {
                     <ul className="space-y-1">
                       {c.results.map((r, i) => (
                         <li key={i} className="font-sans text-sm text-dark flex gap-1.5">
-                          <span className="text-sage flex-shrink-0">✓</span>
+                          <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" strokeWidth={2.5} />
                           {r}
                         </li>
                       ))}

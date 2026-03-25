@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { Check } from "lucide-react";
 import { CONTACT } from "@/lib/constants";
 import { getCasesByTag } from "@/lib/content/cases";
 
@@ -167,7 +168,7 @@ export default function PartnerPage() {
                     "Карьерный рост внутри компании",
                   ].map((item) => (
                     <li key={item} className="font-sans text-sm text-dark flex gap-2">
-                      <span className="text-sage">✓</span> {item}
+                      <Check className="w-4 h-4 text-sage shrink-0" strokeWidth={2.5} /> {item}
                     </li>
                   ))}
                 </ul>
@@ -221,7 +222,7 @@ export default function PartnerPage() {
                   <ul className="space-y-1 mb-5">
                     {c.results.map((r, i) => (
                       <li key={i} className="font-sans text-sm text-dark flex gap-2">
-                        <span className="text-sage flex-shrink-0">✓</span>
+                        <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" strokeWidth={2.5} />
                         {r}
                       </li>
                     ))}

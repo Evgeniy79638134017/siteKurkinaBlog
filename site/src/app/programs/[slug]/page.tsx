@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { Bone, HeartPulse, Zap, Sparkles, Leaf, Check, X, type LucideIcon } from "lucide-react";
 import { PROGRAMS, getProgramBySlug } from "@/lib/content/programs";
 import { CONTACT } from "@/lib/constants";
 
@@ -22,11 +23,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const ICONS: Record<string, string> = {
-  activity: "🦴",
-  heart: "❤️",
-  zap: "⚡",
-  sparkles: "✨",
+const ICONS: Record<string, LucideIcon> = {
+  activity: Bone,
+  heart: HeartPulse,
+  zap: Zap,
+  sparkles: Sparkles,
 };
 
 export default async function ProgramPage({ params }: Props) {
@@ -47,7 +48,14 @@ export default async function ProgramPage({ params }: Props) {
             ← Все программы
           </Link>
           <div className="max-w-3xl">
-            <div className="text-5xl mb-4">{ICONS[program.icon] ?? "🌿"}</div>
+            {(() => {
+              const Icon = ICONS[program.icon] ?? Leaf;
+              return (
+                <div className="w-14 h-14 rounded-xl bg-sage/10 flex items-center justify-center mb-4">
+                  <Icon className="w-7 h-7 text-sage" strokeWidth={1.5} />
+                </div>
+              );
+            })()}
             <h1 className="font-display text-dark mb-2">
               {program.title}
             </h1>
@@ -72,7 +80,7 @@ export default async function ProgramPage({ params }: Props) {
                 {program.targetProblems.map((p) => (
                   <li key={p} className="flex gap-3 items-start">
                     <span className="w-6 h-6 rounded-full bg-terra/15 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-terra text-sm">✕</span>
+                      <X className="w-3.5 h-3.5 text-terra" strokeWidth={2.5} />
                     </span>
                     <span className="font-sans text-muted text-lg">{p}</span>
                   </li>
@@ -88,7 +96,7 @@ export default async function ProgramPage({ params }: Props) {
                 {program.results.map((r) => (
                   <li key={r} className="flex gap-3 items-start">
                     <span className="w-6 h-6 rounded-full bg-sage/15 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-sage text-sm">✓</span>
+                      <Check className="w-3.5 h-3.5 text-sage" strokeWidth={2.5} />
                     </span>
                     <span className="font-sans text-dark text-lg">{r}</span>
                   </li>

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { Bone, HeartPulse, Zap, Sparkles, Leaf, Microscope, ClipboardList, Handshake, Check, type LucideIcon } from "lucide-react";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { PROGRAMS } from "@/lib/content/programs";
 import { CONTACT } from "@/lib/constants";
@@ -10,11 +11,11 @@ export const metadata: Metadata = {
     "Программы восстановления здоровья через клеточное питание: суставы, давление, ЖКТ, энергия.",
 };
 
-const ICONS: Record<string, string> = {
-  activity: "🦴",
-  heart: "❤️",
-  zap: "⚡",
-  sparkles: "✨",
+const ICONS: Record<string, LucideIcon> = {
+  activity: Bone,
+  heart: HeartPulse,
+  zap: Zap,
+  sparkles: Sparkles,
 };
 
 export default function ProgramsPage() {
@@ -42,25 +43,27 @@ export default function ProgramsPage() {
       <section className="py-14 bg-sage">
         <div className="container-site">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {[
+            {([
               {
-                icon: "🔬",
+                Icon: Microscope,
                 title: "Клеточное питание",
                 text: "Организм получает микро- и макроэлементы на клеточном уровне — там, где обычные продукты не справляются.",
               },
               {
-                icon: "📋",
+                Icon: ClipboardList,
                 title: "Индивидуальный план",
                 text: "Анкетирование, анализ симптомов, составление персональной программы — не шаблон, а решение под ваш запрос.",
               },
               {
-                icon: "🤝",
+                Icon: Handshake,
                 title: "Сопровождение",
                 text: "Еженедельный контроль динамики, корректировка программы, ответы на все вопросы в процессе.",
               },
-            ].map((item) => (
+            ] as const).map((item) => (
               <div key={item.title}>
-                <div className="text-3xl mb-3">{item.icon}</div>
+                <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mb-3 mx-auto">
+                  <item.Icon className="w-6 h-6 text-white" strokeWidth={1.5} />
+                </div>
                 <h3 className="font-display text-xl text-white mb-2">{item.title}</h3>
                 <p className="font-sans text-white/75 text-sm leading-relaxed">{item.text}</p>
               </div>
@@ -80,7 +83,14 @@ export default function ProgramsPage() {
               >
                 {/* Иконка + заголовок */}
                 <div className="flex items-start gap-4 mb-5">
-                  <div className="text-4xl flex-shrink-0">{ICONS[program.icon] ?? "🌿"}</div>
+                  {(() => {
+                    const Icon = ICONS[program.icon] ?? Leaf;
+                    return (
+                      <div className="w-12 h-12 rounded-xl bg-sage/10 flex items-center justify-center shrink-0">
+                        <Icon className="w-6 h-6 text-sage" strokeWidth={1.5} />
+                      </div>
+                    );
+                  })()}
                   <div>
                     <h2 className="font-display text-2xl text-dark">
                       {program.title}
@@ -118,7 +128,7 @@ export default function ProgramsPage() {
                   <ul className="space-y-1">
                     {program.results.map((r) => (
                       <li key={r} className="font-sans text-sm text-dark flex gap-2">
-                        <span className="text-sage flex-shrink-0">✓</span>
+                        <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" strokeWidth={2.5} />
                         {r}
                       </li>
                     ))}

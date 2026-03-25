@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
+import { Check, X } from "lucide-react";
 import { getFeaturedCases } from "@/lib/content/cases";
 
 export function TestimonialsSection() {
@@ -67,7 +68,7 @@ export function TestimonialsSection() {
                 <ul className="space-y-1.5">
                   {c.problems.slice(0, 2).map((p, i) => (
                     <li key={i} className="font-sans text-muted text-sm flex gap-2">
-                      <span className="text-terra flex-shrink-0">✕</span>
+                      <X className="w-4 h-4 text-terra shrink-0 mt-0.5" strokeWidth={2.5} />
                       {p}
                     </li>
                   ))}
@@ -82,7 +83,7 @@ export function TestimonialsSection() {
                 <ul className="space-y-1.5">
                   {c.results.slice(0, 3).map((r, i) => (
                     <li key={i} className="font-sans text-dark text-sm flex gap-2">
-                      <span className="text-sage flex-shrink-0">✓</span>
+                      <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" strokeWidth={2.5} />
                       {r}
                     </li>
                   ))}
