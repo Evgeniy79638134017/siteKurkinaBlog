@@ -21,12 +21,22 @@ export type CaseTag =
   | "crisis";
 
 // ─── Программа здоровья ───────────────────────────────────────
+export interface ProgramWeek {
+  week: string;
+  focus: string;
+  details: string;
+}
+
 export interface Program {
   id: string;
   slug: string;
   title: string;
   subtitle: string;
   description: string;
+  detailedDescription?: string;
+  scienceNote?: string;
+  personalStory?: string;
+  weekByWeek?: ProgramWeek[];
   targetProblems: string[];
   results: string[];
   duration: string;
