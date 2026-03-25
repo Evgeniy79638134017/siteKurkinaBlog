@@ -103,16 +103,16 @@ export default function PartnerPage() {
                 className={`text-center p-5 rounded-2xl ${
                   i === INCOME_STAGES.length - 1
                     ? "bg-dark"
-                    : "bg-white/20"
+                    : "bg-white/15 backdrop-blur-sm"
                 }`}
               >
-                <p className="font-sans text-xs text-white/70 mb-1">{stage.period}</p>
+                <p className="font-sans text-xs text-white font-medium mb-1">{stage.period}</p>
                 <p className={`font-display text-2xl font-semibold mb-1 ${
-                  i === INCOME_STAGES.length - 1 ? "text-white" : "text-gold"
+                  i === INCOME_STAGES.length - 1 ? "text-gold-light" : "text-white"
                 }`}>
                   {stage.amount}
                 </p>
-                <p className={`font-sans text-xs ${i === INCOME_STAGES.length - 1 ? "text-white/60" : "text-muted-light"}`}>{stage.note}</p>
+                <p className="font-sans text-xs text-white/80">{stage.note}</p>
               </div>
             ))}
           </div>
