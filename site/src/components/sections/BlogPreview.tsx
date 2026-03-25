@@ -38,7 +38,7 @@ export function BlogPreview() {
         {/* Заголовок */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
           <div>
-            <p className="font-sans text-sm font-semibold uppercase tracking-widest text-sage mb-3">
+            <p className="font-sans text-sm font-semibold uppercase tracking-widest text-sage-dark mb-3">
               Блог
             </p>
             <h2 className="font-display text-dark">
@@ -47,7 +47,7 @@ export function BlogPreview() {
           </div>
           <Link
             href="/blog"
-            className="font-sans font-semibold text-sage hover:text-sage-dark transition-colors flex-shrink-0"
+            className="font-sans font-semibold text-sage-dark hover:text-dark transition-colors flex-shrink-0"
           >
             Все статьи →
           </Link>
@@ -69,7 +69,7 @@ export function BlogPreview() {
             >
               {/* Тег и время */}
               <div className="flex items-center justify-between mb-4">
-                <span className="font-sans text-xs font-semibold uppercase tracking-wider text-sage bg-sage/10 px-3 py-1 rounded-full">
+                <span className="font-sans text-xs font-semibold uppercase tracking-wider text-sage-dark bg-sage/10 px-3 py-1 rounded-full">
                   {post.tag}
                 </span>
                 <span className="font-sans text-xs text-taupe">
@@ -88,7 +88,7 @@ export function BlogPreview() {
               </p>
 
               {/* Ссылка */}
-              <span className="font-sans text-sm font-semibold text-sage group-hover:text-sage-dark transition-colors mt-auto">
+              <span className="font-sans text-sm font-semibold text-sage-dark group-hover:text-dark transition-colors mt-auto">
                 Читать →
               </span>
             </Link>

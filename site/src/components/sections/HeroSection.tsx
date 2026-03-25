@@ -21,11 +21,11 @@ export function HeroSection() {
       ref={ref}
       className="relative min-h-screen bg-cream flex items-center pt-20 md:pt-24 overflow-hidden"
     >
-      {/* Параллакс-блобы */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Параллакс-блобы (скрыты на мобильных для контрастности) */}
+      <div className="absolute inset-0 pointer-events-none hidden md:block">
         <motion.div
           style={{ y: blob1Y }}
-          className="absolute top-1/3 right-[-10%] w-[500px] h-[500px] bg-sage/10 rounded-full blur-3xl"
+          className="absolute top-1/3 right-[-10%] w-[500px] h-[500px] bg-beige/50 rounded-full blur-3xl"
         />
         <motion.div
           style={{ y: blob2Y }}
@@ -33,7 +33,7 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="container-site relative z-10 py-16 md:py-20 lg:py-24">
+      <div className="container-site relative z-10 isolate py-16 md:py-20 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Левая колонка: Текст */}
@@ -57,14 +57,14 @@ export function HeroSection() {
               className="font-display text-dark leading-[1.1] mb-6"
             >
               Моё состояние в 64 года{" "}
-              <span className="text-sage">равно 40 лет.</span>
+              <span className="text-sage-dark">равно 40 лет.</span>
               <br />Представляете?
             </motion.h1>
 
             {/* Подзаголовок */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 20 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="font-sans text-xl text-muted max-w-xl mb-10 leading-relaxed"
             >
@@ -75,8 +75,8 @@ export function HeroSection() {
 
             {/* CTA-кнопки */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 16 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="flex flex-col sm:flex-row gap-4 mb-8"
             >
@@ -84,27 +84,22 @@ export function HeroSection() {
                 href={CONTACT.telegramPersonal}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 bg-sage text-white rounded-full font-sans font-semibold text-lg hover:bg-sage-dark hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 shadow-lg shadow-sage/25"
+                className="inline-flex items-center justify-center px-8 py-4 bg-sage text-white rounded-full font-sans font-semibold text-lg hover:bg-sage-dark hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 shadow-lg shadow-dark/15"
               >
                 Записаться на консультацию
               </a>
               <Link
                 href="/about"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-sage text-sage-dark rounded-full font-sans font-semibold text-lg hover:bg-sage/10 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-sage text-dark rounded-full font-sans font-semibold text-lg hover:bg-sage/10 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
               >
                 Узнать мою историю
               </Link>
             </motion.div>
 
             {/* Подпись */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.45 }}
-              className="font-sans text-sm text-taupe"
-            >
+            <p className="font-sans text-sm text-muted">
               Бесплатная консультация · Индивидуальная программа · Результат через 4 месяца
-            </motion.p>
+            </p>
           </div>
 
           {/* Правая колонка: Фото */}

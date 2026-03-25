@@ -19,7 +19,7 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center max-w-2xl mx-auto mb-12 md:mb-16"
         >
-          <p className="font-sans text-sm font-semibold uppercase tracking-widest text-sage mb-3">
+          <p className="font-sans text-sm font-semibold uppercase tracking-widest text-sage-dark mb-3">
             Реальные результаты
           </p>
           <h2 className="font-display text-dark mb-4">
@@ -108,7 +108,7 @@ export function TestimonialsSection() {
         <div className="text-center">
           <Link
             href="/results"
-            className="inline-flex items-center gap-2 font-sans font-semibold text-sage hover:text-sage-dark transition-colors text-lg"
+            className="inline-flex items-center gap-2 font-sans font-semibold text-sage-dark hover:text-dark transition-colors text-lg"
           >
             Смотреть все результаты →
           </Link>

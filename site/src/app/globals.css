@@ -12,12 +12,12 @@
   --color-beige:       #F4E1C4;
   --color-beige-dark:  #EDD4B0;
   --color-cream-dark:  #D4C4B8;
-  --color-sage:        #96AB88;
-  --color-sage-dark:   #7A9270;
-  --color-sage-light:  #B5C9A9;
+  --color-sage:        #437034;
+  --color-sage-dark:   #345828;
+  --color-sage-light:  #96AB88;
   --color-terra:       #D08C60;
   --color-terra-dark:  #BA7449;
-  --color-taupe:       #A58D7F;
+  --color-taupe:       #6B5B52;
   --color-gold:        #C9A84C;
   --color-gold-light:  #E8C96A;
   --color-dark:        #2C1810;
@@ -31,7 +31,7 @@
   --color-foreground:  #2C1810;
   --color-card:        #FFFFFF;
   --color-card-foreground: #2C1810;
-  --color-primary:     #96AB88;
+  --color-primary:     #437034;
   --color-primary-foreground: #FFFFFF;
   --color-secondary:   #F4E1C4;
   --color-secondary-foreground: #2C1810;
@@ -40,7 +40,7 @@
   --color-muted-bg:    #F0E6D8;
   --color-muted-fg:    #6B5B52;
   --color-destructive: #D94040;
-  --color-ring:        #96AB88;
+  --color-ring:        #437034;
 
   /* Шрифты */
   --font-display: "Cormorant Garamond", Georgia, serif;
@@ -81,7 +81,7 @@
   --card-foreground: 15 28% 15%;
   --popover: 0 0% 100%;
   --popover-foreground: 15 28% 15%;
-  --primary: 108 15% 60%;
+  --primary: 108 20% 45%;
   --primary-foreground: 0 0% 100%;
   --secondary: 35 48% 87%;
   --secondary-foreground: 15 28% 15%;
@@ -93,9 +93,9 @@
   --destructive-foreground: 0 0% 100%;
   --border: 32 38% 84%;
   --input: 32 38% 84%;
-  --ring: 108 15% 60%;
+  --ring: 108 20% 45%;
   --radius: 0.75rem;
-  --chart-1: 108 15% 60%;
+  --chart-1: 108 20% 45%;
   --chart-2: 25 55% 60%;
   --chart-3: 201 40% 45%;
   --chart-4: 45 70% 55%;

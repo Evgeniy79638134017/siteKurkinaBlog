@@ -30,6 +30,12 @@ Thumbs.db
 *.swp
 *.swo
 
+# MCP config (содержит API-ключи)
+.mcp.json
+
+# Claude Code
+.claude/
+
 # Logs
 npm-debug.log*
 pnpm-debug.log*
