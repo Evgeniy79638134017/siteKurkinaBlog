@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 import { POSTS } from "@/lib/content/posts";
 import { CONTACT } from "@/lib/constants";
 
@@ -59,7 +60,7 @@ function parseContent(content: string) {
 
 function renderInlineMarkdown(text: string): React.ReactNode[] {
   const parts: React.ReactNode[] = [];
-  const regex = /\*\*(.+?)\*\*/g;
+  const regex = /\*\*(.+?)\*\*|\(PMID\s*(\d+)\)/g;
   let lastIndex = 0;
   let match;
 
@@ -67,11 +68,26 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
     if (match.index > lastIndex) {
       parts.push(text.slice(lastIndex, match.index));
     }
-    parts.push(
-      <strong key={match.index} className="font-semibold text-dark">
-        {match[1]}
-      </strong>
-    );
+    if (match[1]) {
+      parts.push(
+        <strong key={match.index} className="font-semibold text-dark">
+          {match[1]}
+        </strong>
+      );
+    } else if (match[2]) {
+      parts.push(
+        <a
+          key={match.index}
+          href={`https://pubmed.ncbi.nlm.nih.gov/${match[2]}/`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-sage-dark hover:text-dark underline decoration-sage/40 hover:decoration-sage transition-colors font-medium"
+        >
+          <span>исследование PubMed</span>
+          <ExternalLink className="w-3.5 h-3.5 inline" strokeWidth={2} />
+        </a>
+      );
+    }
     lastIndex = regex.lastIndex;
   }
 
