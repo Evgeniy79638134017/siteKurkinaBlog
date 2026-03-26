@@ -27,6 +27,22 @@ export interface ProgramWeek {
   details: string;
 }
 
+export interface ProgramCause {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface ProgramTimeline {
+  period: string;
+  results: string[];
+}
+
+export interface ProgramFAQ {
+  question: string;
+  answer: string;
+}
+
 export interface Program {
   id: string;
   slug: string;
@@ -36,7 +52,12 @@ export interface Program {
   detailedDescription?: string;
   scienceNote?: string;
   personalStory?: string;
+  heroQuote?: string;
+  causes?: ProgramCause[];
+  baseConditions?: string[];
   weekByWeek?: ProgramWeek[];
+  expectedResults?: ProgramTimeline[];
+  faq?: ProgramFAQ[];
   targetProblems: string[];
   results: string[];
   duration: string;
