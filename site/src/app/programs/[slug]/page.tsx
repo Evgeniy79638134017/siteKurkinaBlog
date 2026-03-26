@@ -380,12 +380,12 @@ export default async function ProgramPage({ params }: Props) {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={CONTACT.telegramPersonal}
+              href={CONTACT.max}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-sage-dark rounded-full font-sans font-semibold text-lg hover:bg-cream transition-colors"
             >
-              Записаться в Telegram
+              Записаться в Max
             </a>
             <Link
               href="/results"

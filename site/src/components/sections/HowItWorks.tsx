@@ -7,7 +7,7 @@ const STEPS = [
     title: "Бесплатная консультация",
     description:
       "Рассказываете о своих симптомах и состоянии здоровья. Я задаю вопросы, оцениваю ситуацию и объясняю, чем могу помочь.",
-    note: "30–40 минут в Telegram или по телефону",
+    note: "30–40 минут в мессенджере Max или по телефону",
   },
   {
     number: "02",
@@ -97,12 +97,12 @@ export function HowItWorks() {
               </p>
             </div>
             <a
-              href={CONTACT.telegramPersonal}
+              href={CONTACT.max}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-4 bg-white text-dark rounded-full font-sans font-semibold text-lg hover:bg-cream transition-colors"
             >
-              Написать в Telegram
+              Написать в Max
             </a>
           </div>
         </div>

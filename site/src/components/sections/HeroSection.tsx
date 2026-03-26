@@ -81,7 +81,7 @@ export function HeroSection() {
               className="flex flex-col sm:flex-row gap-4 mb-8"
             >
               <a
-                href={CONTACT.telegramPersonal}
+                href={CONTACT.max}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 bg-sage text-white rounded-full font-sans font-semibold text-lg hover:bg-sage-dark hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 shadow-lg shadow-dark/15"

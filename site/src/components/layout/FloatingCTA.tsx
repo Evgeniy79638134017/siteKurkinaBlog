@@ -17,7 +17,7 @@ export function FloatingCTA() {
     <AnimatePresence>
       {visible && (
         <motion.a
-          href={CONTACT.telegramPersonal}
+          href={CONTACT.max}
           target="_blank"
           rel="noopener noreferrer"
           initial={{ scale: 0, opacity: 0 }}

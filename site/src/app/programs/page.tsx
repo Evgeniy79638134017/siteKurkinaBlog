@@ -168,7 +168,7 @@ export default function ProgramsPage() {
             и подберём подходящее решение.
           </p>
           <a
-            href={CONTACT.telegramPersonal}
+            href={CONTACT.max}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-4 bg-white text-sage-dark rounded-full font-sans font-semibold text-lg hover:bg-cream transition-colors"

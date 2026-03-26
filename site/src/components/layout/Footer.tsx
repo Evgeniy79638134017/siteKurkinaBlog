@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { CONTACT, NAV_LINKS, SITE } from "@/lib/constants";
 
-function TelegramIcon() {
+function MaxIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.16 13.595l-2.964-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.992.964z" />
-    </svg>
+    <span className="text-[13px] font-bold leading-none" aria-hidden="true">M</span>
   );
 }
 
@@ -79,12 +77,12 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href={CONTACT.telegramPersonal}
+                  href={CONTACT.max}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-cream-dark hover:text-white text-[15px] transition-colors"
                 >
-                  {CONTACT.telegramHandle}
+                  Мессенджер Max
                 </a>
               </li>
             </ul>
@@ -92,22 +90,13 @@ export function Footer() {
             {/* Соцсети */}
             <div className="flex items-center gap-3">
               <a
-                href={CONTACT.telegramChannel}
+                href={CONTACT.max}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Telegram-канал"
+                aria-label="Max мессенджер"
                 className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-cream-dark hover:bg-sage hover:text-white transition-colors"
               >
-                <TelegramIcon />
-              </a>
-              <a
-                href={CONTACT.telegramPersonal}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Telegram личный"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-cream-dark hover:bg-sage hover:text-white transition-colors"
-              >
-                <TelegramIcon />
+                <MaxIcon />
               </a>
               <a
                 href={CONTACT.instagram}

@@ -38,7 +38,7 @@ export function FinalCTA() {
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href={CONTACT.telegramPersonal}
+              href={CONTACT.max}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-10 py-4 bg-sage text-white rounded-full font-sans font-semibold text-lg hover:bg-sage-dark hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 shadow-lg shadow-sage/25"

@@ -152,7 +152,7 @@ export default function ResultsPage() {
             может помочь именно вам.
           </p>
           <a
-            href={CONTACT.telegramPersonal}
+            href={CONTACT.max}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-4 bg-sage text-white rounded-full font-sans font-semibold text-lg hover:bg-sage-dark transition-colors"

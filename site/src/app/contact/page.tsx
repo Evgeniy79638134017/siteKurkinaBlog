@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 
 const CONTACT_OPTIONS = [
   {
-    icon: "✈️",
-    title: "Telegram (личный)",
-    value: CONTACT.telegramHandle,
-    href: CONTACT.telegramPersonal,
+    icon: "💬",
+    title: "Max (мессенджер)",
+    value: "Мессенджер Max",
+    href: CONTACT.max,
     description: "Предпочтительный способ связи. Отвечаю лично.",
-    cta: "Написать в Telegram",
+    cta: "Написать в Max",
     primary: true,
   },
   {
@@ -24,15 +24,6 @@ const CONTACT_OPTIONS = [
     href: `tel:${CONTACT.phone}`,
     description: "Звоните или пишите в WhatsApp.",
     cta: "Позвонить",
-    primary: false,
-  },
-  {
-    icon: "📢",
-    title: "Telegram-канал",
-    value: "Подписаться",
-    href: CONTACT.telegramChannel,
-    description: "Полезные статьи, советы, новости — каждую неделю.",
-    cta: "Перейти в канал",
     primary: false,
   },
 ];
@@ -189,7 +180,7 @@ export default function ContactPage() {
               {[
                 {
                   step: "01",
-                  title: "Вы пишете в Telegram",
+                  title: "Вы пишете в Max",
                   text: "Напишите о своей ситуации: симптомы, диагноз, что пробовали, что хотите изменить. Нет строгой формы — просто своими словами.",
                 },
                 {
@@ -230,12 +221,12 @@ export default function ContactPage() {
             Бесплатно. Без обязательств. Просто поговорим.
           </p>
           <a
-            href={CONTACT.telegramPersonal}
+            href={CONTACT.max}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-10 py-4 bg-white text-sage-dark rounded-full font-sans font-semibold text-lg hover:bg-cream transition-colors"
           >
-            Написать в Telegram
+            Написать в Max
           </a>
         </div>
       </section>

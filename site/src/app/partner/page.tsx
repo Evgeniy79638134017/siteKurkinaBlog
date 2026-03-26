@@ -36,7 +36,7 @@ const ADVANTAGES = [
   },
   {
     title: "Свой график",
-    text: "Работайте когда удобно: дома, через Telegram, без офиса и начального капитала.",
+    text: "Работайте когда удобно: дома, через мессенджер Max, без офиса и начального капитала.",
   },
   {
     title: "Пассивный доход",
@@ -265,16 +265,16 @@ export default function PartnerPage() {
             Готовы узнать подробнее?
           </h2>
           <p className="font-sans text-cream/85 text-lg mb-8 max-w-xl mx-auto">
-            Напишите мне в Telegram — расскажу о старте, отвечу на все вопросы.
+            Напишите мне в Max — расскажу о старте, отвечу на все вопросы.
             Никакого давления, только честный разговор.
           </p>
           <a
-            href={CONTACT.telegramPersonal}
+            href={CONTACT.max}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-4 bg-white text-sage-dark rounded-full font-sans font-semibold text-lg hover:bg-cream transition-colors"
           >
-            Написать Ольге в Telegram
+            Написать Ольге в Max
           </a>
         </div>
       </section>

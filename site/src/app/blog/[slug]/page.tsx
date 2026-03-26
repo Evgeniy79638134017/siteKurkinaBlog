@@ -217,7 +217,7 @@ export default async function BlogPostPage(
               Запишитесь на бесплатную консультацию. Я выслушаю вашу ситуацию и подскажу, с чего начать восстановление.
             </p>
             <a
-              href={CONTACT.telegramPersonal}
+              href={CONTACT.max}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-4 bg-sage text-white rounded-full font-sans font-semibold hover:bg-sage-dark transition-colors"

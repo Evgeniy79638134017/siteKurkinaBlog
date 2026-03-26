@@ -9,7 +9,7 @@ export const CONTACT = {
   instagramHandle: "@olga_bog_star",
   tiktok: "https://www.tiktok.com/@_olga_bog_remissia",
   tiktokHandle: "@_olga_bog_remissia",
-  max: "https://max.ru/u/f9LHodD0cOLqBTFFRQBGaDzw_70CO08W6VqnqEQdnND6JT6iupDTToAJ3WI",
+  max: "https://max.ru/u/f9LHodD0cOI7WAZ_XXFNLWP0PuPz0E_zLRP06ceDIFKpgqik_6WnuXgBTYs",
 } as const;
 
 // ─── Навигация ───────────────────────────────────────────────
@@ -50,14 +50,9 @@ export const STATS = [
 // ─── Социальные сети (для футера и кнопок) ───────────────────
 export const SOCIAL_LINKS = [
   {
-    name: "Telegram (канал)",
-    href: CONTACT.telegramChannel,
-    icon: "telegram",
-  },
-  {
-    name: "Telegram (личный)",
-    href: CONTACT.telegramPersonal,
-    icon: "telegram",
+    name: "Max (мессенджер)",
+    href: CONTACT.max,
+    icon: "max",
   },
   {
     name: "Instagram",
@@ -69,11 +64,6 @@ export const SOCIAL_LINKS = [
     name: "TikTok",
     href: CONTACT.tiktok,
     icon: "tiktok",
-  },
-  {
-    name: "Max",
-    href: CONTACT.max,
-    icon: "max",
   },
 ] as const;
 

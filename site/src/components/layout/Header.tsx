@@ -65,7 +65,7 @@ export function Header() {
           {/* CTA + Бургер */}
           <div className="flex items-center gap-3">
             <a
-              href={CONTACT.telegramPersonal}
+              href={CONTACT.max}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center px-5 py-2.5 bg-sage text-white rounded-full font-sans text-[15px] font-semibold hover:bg-sage-dark hover:scale-[1.04] active:scale-[0.97] transition-all duration-200"
@@ -104,7 +104,7 @@ export function Header() {
               </Link>
             ))}
             <a
-              href={CONTACT.telegramPersonal}
+              href={CONTACT.max}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 text-center py-3.5 bg-sage text-white rounded-full font-sans font-semibold hover:bg-sage-dark transition-colors"

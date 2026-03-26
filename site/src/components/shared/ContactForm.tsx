@@ -20,7 +20,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Имя должно содержать минимум 2 символа." }),
-  contact: z.string().min(5, { message: "Введите корректный номер телефона или Telegram." }),
+  contact: z.string().min(5, { message: "Введите корректный номер телефона или ник в Max." }),
   message: z.string().optional(),
 });
 
@@ -59,7 +59,7 @@ export function ContactForm() {
       form.reset();
     } catch {
       toast.error("Не удалось отправить заявку", {
-        description: "Попробуйте позже или напишите в Telegram.",
+        description: "Попробуйте позже или напишите в Max.",
       });
     } finally {
       setIsSubmitting(false);
@@ -93,7 +93,7 @@ export function ContactForm() {
             name="contact"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="font-sans text-muted">Телефон или Telegram</FormLabel>
+                <FormLabel className="font-sans text-muted">Телефон или Max</FormLabel>
                 <FormControl>
                   <Input placeholder="+7 (999) 000-00-00 или @username" className="font-sans border-border focus-visible:ring-sage bg-cream/30 text-lg py-5" {...field} />
                 </FormControl>

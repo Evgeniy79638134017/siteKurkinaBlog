@@ -81,18 +81,18 @@ export default function BlogPage() {
       <section className="section-padding bg-sage">
         <div className="container-site text-center">
           <h2 className="font-display text-white mb-4">
-            Новые статьи — в Telegram-канале
+            Новые статьи — в мессенджере Max
           </h2>
           <p className="font-sans text-white/80 text-lg mb-8 max-w-lg mx-auto">
             Подпишитесь, чтобы не пропустить полезные материалы о здоровье и долголетии.
           </p>
           <a
-            href={CONTACT.telegramChannel}
+            href={CONTACT.max}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-4 bg-white text-sage-dark rounded-full font-sans font-semibold text-lg hover:bg-cream transition-colors"
           >
-            Подписаться на канал
+            Написать в Max
           </a>
         </div>
       </section>
