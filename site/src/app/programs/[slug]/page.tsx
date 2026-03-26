@@ -10,8 +10,42 @@ import {
   Pill, Brain, BatteryLow, ShieldOff, Utensils,
   Thermometer, Salad,
 } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { PROGRAMS, getProgramBySlug } from "@/lib/content/programs";
 import { CONTACT } from "@/lib/constants";
+
+function renderWithPubMedLinks(text: string): React.ReactNode[] {
+  const parts: React.ReactNode[] = [];
+  const regex = /\(PMID\s*(\d+)\)/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    const pmid = match[1];
+    parts.push(
+      <a
+        key={match.index}
+        href={`https://pubmed.ncbi.nlm.nih.gov/${pmid}/`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1 text-sage-dark hover:text-dark underline decoration-sage/40 hover:decoration-sage transition-colors font-medium"
+      >
+        <span>исследование PubMed</span>
+        <ExternalLink className="w-3.5 h-3.5 inline" strokeWidth={2} />
+      </a>
+    );
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : [text];
+}
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -165,7 +199,7 @@ export default async function ProgramPage({ params }: Props) {
                       <CauseIcon className="w-5 h-5 text-terra" strokeWidth={1.5} />
                     </div>
                     <h3 className="font-display text-lg text-dark mb-2">{cause.title}</h3>
-                    <p className="font-sans text-muted text-base leading-relaxed">{cause.description}</p>
+                    <p className="font-sans text-muted text-base leading-relaxed">{renderWithPubMedLinks(cause.description)}</p>
                   </div>
                 );
               })}
@@ -249,7 +283,7 @@ export default async function ProgramPage({ params }: Props) {
               </div>
             </div>
             <p className="font-sans text-lg text-muted leading-relaxed">
-              {program.scienceNote}
+              {renderWithPubMedLinks(program.scienceNote)}
             </p>
           </div>
         </section>
@@ -275,7 +309,7 @@ export default async function ProgramPage({ params }: Props) {
           <div className="container-site max-w-3xl">
             <h2 className="font-display text-dark mb-6">Подробнее о программе</h2>
             <p className="font-sans text-lg text-muted leading-relaxed">
-              {program.detailedDescription}
+              {renderWithPubMedLinks(program.detailedDescription)}
             </p>
           </div>
         </section>
@@ -348,7 +382,7 @@ export default async function ProgramPage({ params }: Props) {
                     <ChevronDown className="w-5 h-5 text-sage-dark flex-shrink-0 transition-transform group-open:rotate-180" strokeWidth={2} />
                   </summary>
                   <div className="px-6 pb-6 -mt-2">
-                    <p className="font-sans text-muted leading-relaxed">{item.answer}</p>
+                    <p className="font-sans text-muted leading-relaxed">{renderWithPubMedLinks(item.answer)}</p>
                   </div>
                 </details>
               ))}
