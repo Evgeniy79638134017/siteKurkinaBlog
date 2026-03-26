@@ -55,10 +55,20 @@ export const SOCIAL_LINKS = [
     icon: "max",
   },
   {
-    name: "Instagram",
+    name: "Telegram (канал)",
+    href: CONTACT.telegramChannel,
+    icon: "telegram",
+  },
+  {
+    name: "Telegram (личный)",
+    href: CONTACT.telegramPersonal,
+    icon: "telegram",
+  },
+  {
+    name: "Instagram*",
     href: CONTACT.instagram,
     icon: "instagram",
-    note: "* Instagram — продукт Meta, признанной в РФ экстремистской организацией",
+    note: "* Instagram — продукт компании Meta, признанной в РФ экстремистской организацией",
   },
   {
     name: "TikTok",

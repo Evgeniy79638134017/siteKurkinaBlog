@@ -30,10 +30,16 @@ const CONTACT_OPTIONS = [
 
 const SOCIAL_OPTIONS = [
   {
+    name: "Telegram",
+    handle: CONTACT.telegramHandle,
+    href: CONTACT.telegramPersonal,
+    note: null,
+  },
+  {
     name: "Instagram",
     handle: "@olga_bog_star",
     href: CONTACT.instagram,
-    note: "* Meta признана экстремистской организацией в РФ",
+    note: "* Instagram — продукт компании Meta, признанной в РФ экстремистской организацией",
   },
   {
     name: "TikTok",
@@ -43,7 +49,7 @@ const SOCIAL_OPTIONS = [
   },
   {
     name: "Max",
-    handle: "Профиль на Max",
+    handle: "Мессенджер Max",
     href: CONTACT.max,
     note: null,
   },
