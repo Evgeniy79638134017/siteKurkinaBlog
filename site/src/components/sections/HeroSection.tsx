@@ -46,7 +46,7 @@ export function HeroSection() {
               className="inline-flex items-center gap-2 bg-sage/15 text-sage-dark px-4 py-2 rounded-full font-sans text-sm font-medium mb-8"
             >
               <span className="w-2 h-2 bg-sage rounded-full flex-shrink-0" />
-              Нутрициолог · Биохакинг для 50+
+              Эксперт клеточного питания · Биохакинг 50+
             </motion.div>
 
             {/* Заголовок */}
@@ -111,7 +111,7 @@ export function HeroSection() {
           >
             <Image
               src="/images/hero-olga.png"
-              alt="Ольга Куркина - Нутрициолог"
+              alt="Ольга Куркина — эксперт клеточного питания"
               fill
               priority
               className="object-cover object-center"

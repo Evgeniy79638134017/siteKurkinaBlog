@@ -39,7 +39,7 @@ export function Header() {
               Ольга Куркина
             </span>
             <span className="font-sans text-[13px] text-muted tracking-wide">
-              Нутрициолог · Биохакинг 50+
+              Эксперт клеточного питания · Биохакинг 50+
             </span>
           </Link>
 

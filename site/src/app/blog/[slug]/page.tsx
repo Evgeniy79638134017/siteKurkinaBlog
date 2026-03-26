@@ -227,6 +227,18 @@ export default async function BlogPostPage(
           </div>
         </div>
       </section>
+
+      {/* ── Дисклеймер ── */}
+      <section className="py-6 bg-cream">
+        <div className="container-site max-w-3xl">
+          <p className="font-sans text-xs text-taupe leading-relaxed text-center">
+            Информация носит ознакомительный характер и отражает личный опыт.
+            Не является медицинской рекомендацией. Перед началом программы
+            проконсультируйтесь с врачом. Результаты индивидуальны.
+            Продукты клеточного питания — БАД, не являются лекарственными средствами.
+          </p>
+        </div>
+      </section>
     </>
   );
 }
