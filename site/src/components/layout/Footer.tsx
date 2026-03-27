@@ -148,9 +148,12 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Нижний блок */}
-        <div className="space-y-3 text-[13px] leading-relaxed" style={{ color: "#B8A99A" }}>
-          <p>© {year} Ольга Куркина. Все права защищены.</p>
+        {/* Нижний блок — дисклеймеры */}
+        <div
+          className="space-y-3 text-[13px] leading-relaxed rounded-xl mt-6 p-5"
+          style={{ backgroundColor: "#3D2A1E", color: "#D4C4B8" }}
+        >
+          <p className="font-semibold">© {year} Ольга Куркина. Все права защищены.</p>
           <p>
             Информация на сайте носит ознакомительный характер, отражает личный опыт автора
             и не является медицинской рекомендацией. Ольга Куркина не является врачом
