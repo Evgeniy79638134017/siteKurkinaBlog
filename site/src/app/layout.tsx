@@ -73,7 +73,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
-          <div style={{ backgroundColor: "#1a1a1a", color: "#d4c4b8", padding: "24px 16px", fontSize: "12px", lineHeight: "1.7" }}>
+          <div style={{ backgroundColor: "#1a1a1a", color: "#ffffff", padding: "24px 16px", fontSize: "12px", lineHeight: "1.7" }}>
             <div className="container-site">
               <p style={{ marginBottom: "8px" }}>
                 Информация на сайте отражает личный опыт автора и не является
