@@ -195,15 +195,21 @@ body {
 
 /* Дисклеймер */
 .disclaimer {
-  background-color: #1a1a1a;
-  color: #ffffff;
-  padding: 24px 16px;
+  background-color: var(--color-dark);
+  color: var(--color-cream-dark);
+  padding: 16px 16px 24px;
   font-size: 12px;
-  line-height: 1.7;
+  line-height: 1.6;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .disclaimer p {
   color: inherit;
+  margin-bottom: 4px;
+}
+
+.disclaimer p:last-child {
+  margin-bottom: 0;
 }
 
 /* Контейнер */
