@@ -73,6 +73,9 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <div style={{ backgroundColor: "#1a1a1a", color: "#ffffff", padding: "20px", textAlign: "center", fontSize: "16px" }}>
+            ТЕСТ — этот текст должен быть виден
+          </div>
           <FloatingCTA />
         </body>
     </html>
