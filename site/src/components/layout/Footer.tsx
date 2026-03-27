@@ -52,7 +52,7 @@ export function Footer() {
 
           {/* Навигация */}
           <div>
-            <p className="font-sans text-[13px] font-semibold uppercase tracking-widest text-white/50 mb-4">
+            <p className="font-sans text-[13px] font-semibold uppercase tracking-widest text-white/70 mb-4">
               Навигация
             </p>
             <ul className="space-y-2">
@@ -71,7 +71,7 @@ export function Footer() {
 
           {/* Контакты и соцсети */}
           <div>
-            <p className="font-sans text-[13px] font-semibold uppercase tracking-widest text-white/50 mb-4">
+            <p className="font-sans text-[13px] font-semibold uppercase tracking-widest text-white/70 mb-4">
               Связаться
             </p>
             <ul className="space-y-3 mb-6">
@@ -149,7 +149,7 @@ export function Footer() {
         </div>
 
         {/* Нижний блок */}
-        <div className="space-y-3 text-[12px] text-white/40 leading-relaxed">
+        <div className="space-y-3 text-[12px] text-white/70 leading-relaxed">
           <p>© {year} Ольга Куркина. Все права защищены.</p>
           <p>
             Информация на сайте носит ознакомительный характер, отражает личный опыт автора
