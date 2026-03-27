@@ -73,14 +73,14 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
-          <div style={{ backgroundColor: "#1a1a1a", color: "#ffffff", padding: "24px 16px", fontSize: "12px", lineHeight: "1.7" }}>
+          <div className="disclaimer">
             <div className="container-site">
-              <p style={{ marginBottom: "8px" }}>
+              <p>
                 Информация на сайте отражает личный опыт автора и не является
                 медицинской рекомендацией. Ольга Куркина не является врачом.
                 Проконсультируйтесь с врачом. Результаты индивидуальны.
               </p>
-              <p style={{ marginBottom: "8px" }}>
+              <p>
                 Продукты клеточного питания — БАД, не являются лекарственными средствами.
               </p>
               <p>
