@@ -149,7 +149,7 @@ export function Footer() {
         </div>
 
         {/* Нижний блок */}
-        <div className="space-y-3 text-[13px] text-cream-dark leading-relaxed">
+        <div className="space-y-3 text-[13px] leading-relaxed" style={{ color: "#B8A99A" }}>
           <p>© {year} Ольга Куркина. Все права защищены.</p>
           <p>
             Информация на сайте носит ознакомительный характер, отражает личный опыт автора
