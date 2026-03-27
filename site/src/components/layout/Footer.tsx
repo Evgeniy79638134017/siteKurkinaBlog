@@ -38,15 +38,18 @@ export function Footer() {
     <footer className="bg-dark text-cream">
       <div className="container-site py-12 md:py-16">
 
-        {/* Верхний блок */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 pb-10 border-b border-white/10">
+        {/* Основной блок */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 
           {/* Бренд */}
           <div>
             <p className="font-display text-2xl font-semibold text-white mb-1">Ольга Куркина</p>
             <p className="text-white/70 text-[15px] mb-4">{SITE.tagline}</p>
-            <p className="text-white/70 text-sm leading-relaxed">
+            <p className="text-white/70 text-sm leading-relaxed mb-6">
               {SITE.description}
+            </p>
+            <p className="text-cream-dark text-[12px] leading-relaxed">
+              © {year} Ольга Куркина. Все права защищены.
             </p>
           </div>
 
@@ -69,7 +72,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Контакты и соцсети */}
+          {/* Контакты, соцсети и дисклеймеры */}
           <div>
             <p className="font-sans text-[13px] font-semibold uppercase tracking-widest text-white/70 mb-4">
               Связаться
@@ -106,7 +109,7 @@ export function Footer() {
             </ul>
 
             {/* Соцсети */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 mb-8">
               <a
                 href={CONTACT.max}
                 target="_blank"
@@ -145,24 +148,23 @@ export function Footer() {
                 <TikTokIcon />
               </a>
             </div>
-          </div>
-        </div>
 
-        {/* Нижний блок — дисклеймеры */}
-        <div className="space-y-3 text-[13px] leading-relaxed mt-6 text-white">
-          <p className="font-semibold">© {year} Ольга Куркина. Все права защищены.</p>
-          <p>
-            Информация на сайте носит ознакомительный характер, отражает личный опыт автора
-            и не является медицинской рекомендацией. Ольга Куркина не является врачом
-            или сертифицированным нутрициологом. Перед началом любой программы
-            проконсультируйтесь с лечащим врачом. Результаты индивидуальны
-            и могут отличаться.
-          </p>
-          <p>
-            Упомянутые продукты клеточного питания являются БАД (биологически активными
-            добавками) и не являются лекарственными средствами.
-          </p>
-          <p>* Instagram — продукт компании Meta, признанной в РФ экстремистской организацией.</p>
+            {/* Дисклеймеры — тут же, тем же цветом что и контакты */}
+            <div className="space-y-2 text-cream-dark text-[12px] leading-relaxed">
+              <p>
+                Информация на сайте отражает личный опыт автора и не является
+                медицинской рекомендацией. Ольга Куркина не является врачом.
+                Проконсультируйтесь с врачом. Результаты индивидуальны.
+              </p>
+              <p>
+                Продукты клеточного питания — БАД, не являются лекарственными средствами.
+              </p>
+              <p>
+                * Instagram — продукт компании Meta, признанной в РФ экстремистской организацией.
+              </p>
+            </div>
+          </div>
+
         </div>
 
       </div>
