@@ -155,15 +155,15 @@ export function Footer() {
 
       </div>
 
-      {/* Дисклеймеры — отдельный блок с гарантированным фоном */}
-      <div className="bg-dark border-t border-white/10 px-4 py-6">
-        <div className="container-site space-y-2 text-[12px] text-white/80 leading-relaxed">
-          <p>
+      {/* Дисклеймеры */}
+      <div style={{ backgroundColor: "#2C1810", borderTop: "1px solid rgba(255,255,255,0.1)", padding: "24px 16px", color: "#CCBBAA", fontSize: "12px", lineHeight: "1.6" }}>
+        <div className="container-site">
+          <p style={{ marginBottom: "8px" }}>
             Информация на сайте отражает личный опыт автора и не является
             медицинской рекомендацией. Ольга Куркина не является врачом.
             Проконсультируйтесь с врачом. Результаты индивидуальны.
           </p>
-          <p>
+          <p style={{ marginBottom: "8px" }}>
             Продукты клеточного питания — БАД, не являются лекарственными средствами.
           </p>
           <p>
