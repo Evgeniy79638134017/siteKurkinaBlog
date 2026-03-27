@@ -73,8 +73,20 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
-          <div style={{ backgroundColor: "#1a1a1a", color: "#ffffff", padding: "20px", textAlign: "center", fontSize: "16px" }}>
-            ТЕСТ — этот текст должен быть виден
+          <div style={{ backgroundColor: "#1a1a1a", color: "#d4c4b8", padding: "24px 16px", fontSize: "12px", lineHeight: "1.7" }}>
+            <div className="container-site">
+              <p style={{ marginBottom: "8px" }}>
+                Информация на сайте отражает личный опыт автора и не является
+                медицинской рекомендацией. Ольга Куркина не является врачом.
+                Проконсультируйтесь с врачом. Результаты индивидуальны.
+              </p>
+              <p style={{ marginBottom: "8px" }}>
+                Продукты клеточного питания — БАД, не являются лекарственными средствами.
+              </p>
+              <p>
+                * Instagram — продукт компании Meta, признанной в РФ экстремистской организацией.
+              </p>
+            </div>
           </div>
           <FloatingCTA />
         </body>
