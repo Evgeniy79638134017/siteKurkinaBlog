@@ -36,7 +36,7 @@ const SOCIAL_OPTIONS = [
     note: null,
   },
   {
-    name: "Instagram",
+    name: "Instagram*",
     handle: "@olga_bog_star",
     href: CONTACT.instagram,
     note: "* Instagram — продукт компании Meta, признанной в РФ экстремистской организацией",

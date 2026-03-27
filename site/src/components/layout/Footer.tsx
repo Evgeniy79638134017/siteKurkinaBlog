@@ -129,10 +129,11 @@ export function Footer() {
                 href={CONTACT.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Instagram*"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-cream-dark hover:bg-sage hover:text-white transition-colors"
+                aria-label="Instagram (продукт Meta*)"
+                className="relative w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-cream-dark hover:bg-sage hover:text-white transition-colors"
               >
                 <InstagramIcon />
+                <span className="absolute -top-1 -right-1 text-[10px] text-white/50 font-bold">*</span>
               </a>
               <a
                 href={CONTACT.tiktok}
