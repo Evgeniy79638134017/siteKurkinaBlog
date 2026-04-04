@@ -18,11 +18,20 @@ const CONTACT_OPTIONS = [
     primary: true,
   },
   {
+    icon: "📱",
+    title: "WhatsApp",
+    value: "WhatsApp",
+    href: CONTACT.whatsapp,
+    description: "Для тех, у кого нет Max. Отвечаю лично.",
+    cta: "Написать в WhatsApp",
+    primary: false,
+  },
+  {
     icon: "📞",
     title: "Телефон",
     value: CONTACT.phoneDisplay,
     href: `tel:${CONTACT.phone}`,
-    description: "Звоните или пишите в WhatsApp.",
+    description: "Звоните напрямую.",
     cta: "Позвонить",
     primary: false,
   },
@@ -226,14 +235,24 @@ export default function ContactPage() {
           <p className="font-sans text-white/80 text-lg mb-8 max-w-lg mx-auto">
             Бесплатно. Без обязательств. Просто поговорим.
           </p>
-          <a
-            href={CONTACT.max}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-10 py-4 bg-white text-sage-dark rounded-full font-sans font-semibold text-lg hover:bg-cream transition-colors"
-          >
-            Написать в Max
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={CONTACT.max}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-10 py-4 bg-white text-sage-dark rounded-full font-sans font-semibold text-lg hover:bg-cream transition-colors"
+            >
+              Написать в Max
+            </a>
+            <a
+              href={CONTACT.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-10 py-4 bg-[#25D366] text-white rounded-full font-sans font-semibold text-lg hover:bg-[#1da851] transition-colors"
+            >
+              Написать в WhatsApp
+            </a>
+          </div>
         </div>
       </section>
     </>
