@@ -6,6 +6,7 @@ import * as z from "zod";
 import { useState } from "react";
 import { toast } from "sonner";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -17,11 +18,15 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Имя должно содержать минимум 2 символа." }),
   contact: z.string().min(5, { message: "Введите корректный номер телефона или ник в Max." }),
   message: z.string().optional(),
+  consent: z.literal(true, {
+    message: "Необходимо дать согласие на обработку персональных данных.",
+  }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -35,6 +40,7 @@ export function ContactForm() {
       name: "",
       contact: "",
       message: "",
+      consent: undefined as unknown as true,
     },
   });
 
@@ -120,17 +126,38 @@ export function ContactForm() {
             )}
           />
 
-          <Button 
-            type="submit" 
+          <FormField
+            control={form.control}
+            name="consent"
+            render={({ field }) => (
+              <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value === true}
+                    onCheckedChange={field.onChange}
+                  />
+                </FormControl>
+                <div className="space-y-1 leading-none">
+                  <FormLabel className="font-sans text-sm text-muted leading-snug cursor-pointer">
+                    Я даю согласие на обработку моих{" "}
+                    <Link href="/privacy" className="text-sage underline hover:text-sage-dark transition-colors">
+                      персональных данных
+                    </Link>{" "}
+                    в соответствии с Федеральным законом N 152-ФЗ
+                  </FormLabel>
+                  <FormMessage className="text-destructive text-sm" />
+                </div>
+              </FormItem>
+            )}
+          />
+
+          <Button
+            type="submit"
             className="w-full bg-sage hover:bg-sage-dark text-white rounded-full py-6 text-lg font-sans font-semibold transition-colors mt-2"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Отправка..." : "Отправить заявку"}
           </Button>
-          
-          <p className="text-xs text-taupe text-center mt-4">
-            Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности.
-          </p>
         </form>
       </Form>
     </div>

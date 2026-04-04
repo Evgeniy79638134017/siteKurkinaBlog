@@ -6,19 +6,25 @@ import * as z from "zod";
 import { useState } from "react";
 import { toast } from "sonner";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
+  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Минимум 2 символа" }),
   email: z.string().email({ message: "Некорректный email" }),
+  consent: z.literal(true, {
+    message: "Необходимо дать согласие.",
+  }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -31,6 +37,7 @@ export function LeadMagnetForm() {
     defaultValues: {
       name: "",
       email: "",
+      consent: undefined as unknown as true,
     },
   });
 
@@ -100,8 +107,34 @@ export function LeadMagnetForm() {
           )}
         />
 
-        <Button 
-          type="submit" 
+        <FormField
+          control={form.control}
+          name="consent"
+          render={({ field }) => (
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+              <FormControl>
+                <Checkbox
+                  checked={field.value === true}
+                  onCheckedChange={field.onChange}
+                  className="border-white/40 data-[state=checked]:bg-white data-[state=checked]:text-sage-dark"
+                />
+              </FormControl>
+              <div className="space-y-1 leading-none">
+                <FormLabel className="font-sans text-xs text-white/70 leading-snug cursor-pointer">
+                  Даю согласие на обработку{" "}
+                  <Link href="/privacy" className="underline hover:text-white/90 transition-colors">
+                    персональных данных
+                  </Link>{" "}
+                  (152-ФЗ)
+                </FormLabel>
+                <FormMessage className="text-[#FFD7D7] text-xs font-medium" />
+              </div>
+            </FormItem>
+          )}
+        />
+
+        <Button
+          type="submit"
           className="w-full bg-white hover:bg-cream text-sage-dark rounded-full h-14 text-lg font-sans font-semibold transition-colors mt-2"
           disabled={isSubmitting}
         >

@@ -141,6 +141,24 @@ export default function ResultsPage() {
         </div>
       </section>
 
+      {/* Дисклеймер (38-ФЗ ст.25) */}
+      <section className="py-8 bg-beige/80 border-t border-border">
+        <div className="container-site max-w-3xl">
+          <p className="font-sans text-sm text-muted leading-relaxed text-center mb-2">
+            <span className="font-semibold text-dark">
+              БАД. Не является лекарственным средством.
+            </span>
+          </p>
+          <p className="font-sans text-xs text-taupe leading-relaxed text-center">
+            Истории клиентов отражают индивидуальный опыт и не гарантируют
+            аналогичных результатов. Информация носит ознакомительный характер
+            и не является медицинской рекомендацией. Перед началом любой
+            программы проконсультируйтесь с лечащим врачом. Имеются
+            противопоказания.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section-padding bg-beige">
         <div className="container-site text-center">

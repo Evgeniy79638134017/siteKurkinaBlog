@@ -358,14 +358,21 @@ export default async function ProgramPage({ params }: Props) {
         </section>
       )}
 
-      {/* ── Дисклеймер ── */}
-      <section className="py-6 bg-cream">
+      {/* ── Дисклеймер (38-ФЗ ст.25) ── */}
+      <section className="py-8 bg-beige/80 border-t border-border">
         <div className="container-site max-w-3xl">
+          <p className="font-sans text-sm text-muted leading-relaxed text-center mb-2">
+            <span className="font-semibold text-dark">
+              БАД. Не является лекарственным средством.
+            </span>
+          </p>
           <p className="font-sans text-xs text-taupe leading-relaxed text-center">
-            Информация носит ознакомительный характер и отражает личный опыт.
-            Не является медицинской рекомендацией. Перед началом программы
-            проконсультируйтесь с врачом. Результаты индивидуальны.
-            Продукты клеточного питания — БАД, не являются лекарственными средствами.
+            Информация на данной странице носит исключительно ознакомительный
+            характер, отражает личный опыт и не является медицинской
+            рекомендацией, диагнозом или назначением лечения. Перед началом
+            любой программы проконсультируйтесь с лечащим врачом. Результаты
+            индивидуальны и зависят от особенностей организма. Имеются
+            противопоказания.
           </p>
         </div>
       </section>

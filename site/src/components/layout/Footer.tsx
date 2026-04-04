@@ -51,6 +51,32 @@ export function Footer() {
             <p className="text-cream-dark text-[12px] leading-relaxed">
               © {year} Ольга Куркина. Все права защищены.
             </p>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3">
+              <Link
+                href="/privacy"
+                className="text-cream-dark hover:text-white text-[12px] transition-colors"
+              >
+                Конфиденциальность
+              </Link>
+              <Link
+                href="/cookies"
+                className="text-cream-dark hover:text-white text-[12px] transition-colors"
+              >
+                Cookie
+              </Link>
+              <Link
+                href="/terms"
+                className="text-cream-dark hover:text-white text-[12px] transition-colors"
+              >
+                Соглашение
+              </Link>
+              <Link
+                href="/offer"
+                className="text-cream-dark hover:text-white text-[12px] transition-colors"
+              >
+                Оферта
+              </Link>
+            </div>
           </div>
 
           {/* Навигация */}

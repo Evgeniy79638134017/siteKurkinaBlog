@@ -260,6 +260,19 @@ export default function PartnerPage() {
         </div>
       </section>
 
+      {/* Дисклеймер — доход не гарантирован */}
+      <section className="py-8 bg-beige/80 border-t border-border">
+        <div className="container-site max-w-3xl">
+          <p className="font-sans text-xs text-taupe leading-relaxed text-center">
+            Доход партнёра не гарантирован и зависит от личной активности,
+            навыков, вложенного времени и других факторов. Приведённые примеры
+            отражают индивидуальный опыт конкретных людей и не являются
+            обещанием аналогичного результата. Партнёрская деятельность ведётся
+            в рамках сетевого маркетинга (MLM).
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section-padding bg-sage">
         <div className="container-site text-center">
