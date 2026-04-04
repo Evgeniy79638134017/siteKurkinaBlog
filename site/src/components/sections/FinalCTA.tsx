@@ -43,8 +43,20 @@ export function FinalCTA() {
               rel="noopener noreferrer"
               className="inline-flex items-center px-10 py-4 bg-sage text-white rounded-full font-sans font-semibold text-lg hover:bg-sage-dark hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 shadow-lg shadow-sage/25"
             >
-              Записаться на консультацию
+              Написать в Max
             </a>
+            <a
+              href={CONTACT.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-10 py-4 bg-[#25D366] text-white rounded-full font-sans font-semibold text-lg hover:bg-[#1da851] hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 shadow-lg shadow-[#25D366]/25"
+            >
+              Написать в WhatsApp
+            </a>
+          </div>
+
+          {/* Телефон */}
+          <div className="flex justify-center mt-4">
             <a
               href={`tel:${CONTACT.phone}`}
               className="inline-flex items-center px-10 py-4 bg-transparent text-white rounded-full font-sans font-semibold text-lg hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 border-2 border-white/40 hover:border-white"

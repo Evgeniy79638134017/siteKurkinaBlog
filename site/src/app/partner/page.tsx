@@ -128,17 +128,19 @@ export default function PartnerPage() {
             </h2>
             <div className="bg-white rounded-2xl p-8 mb-8">
               <p className="font-sans text-muted text-lg leading-relaxed mb-4">
-                Это сетевой маркетинг — я не скрываю. Компания по клеточному питанию.
-                Вы покупаете продукт по партнёрской цене и рекомендуете другим.
-                С каждой покупки получаете вознаграждение.
+                Это сетевой маркетинг, я ничего не скрываю. Мы работаем с компанией
+                в сфере клеточного питания. Вы используете качественный продукт,
+                чтобы поддерживать ресурсное состояние, и рекомендуете его знакомым.
+                Цены для всех одинаковые. С каждой покупки, совершённой по вашей
+                реферальной ссылке, вы получаете вознаграждение от компании.
               </p>
               <p className="font-sans text-muted text-lg leading-relaxed mb-4">
                 Когда вы строите команду — получаете бонусы и от продаж своей структуры.
-                Это называется пассивный доход.
+                Это называется пассивный доход!
               </p>
               <p className="font-sans text-dark font-semibold text-lg">
                 Главное условие: верьте в то, что рекомендуете.
-                Именно поэтому я прошу каждого партнёра начать с личного опыта.
+                Именно поэтому важно начинать с личного опыта.
               </p>
             </div>
 
@@ -149,7 +151,7 @@ export default function PartnerPage() {
                   Обычный покупатель
                 </h3>
                 <ul className="space-y-2">
-                  {["Покупает по розничной цене", "Только личные продукты", "Нет дохода от рекомендаций"].map((item) => (
+                  {["Единая цена для всех", "Только личные продукты", "Нет дохода от рекомендаций"].map((item) => (
                     <li key={item} className="font-sans text-sm text-muted flex gap-2">
                       <span className="text-taupe">○</span> {item}
                     </li>
@@ -162,7 +164,7 @@ export default function PartnerPage() {
                 </h3>
                 <ul className="space-y-2">
                   {[
-                    "Покупает по партнёрской цене",
+                    "Покупает по программе лояльности ГЕТ+",
                     "Доход с каждой рекомендации",
                     "Бонусы от команды",
                     "Карьерный рост внутри компании",
@@ -265,17 +267,27 @@ export default function PartnerPage() {
             Готовы узнать подробнее?
           </h2>
           <p className="font-sans text-cream/85 text-lg mb-8 max-w-xl mx-auto">
-            Напишите мне в Max — расскажу о старте, отвечу на все вопросы.
+            Напишите мне — расскажу о старте, отвечу на все вопросы.
             Никакого давления, только честный разговор.
           </p>
-          <a
-            href={CONTACT.max}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-white text-sage-dark rounded-full font-sans font-semibold text-lg hover:bg-cream transition-colors"
-          >
-            Написать Ольге в Max
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={CONTACT.max}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 bg-white text-sage-dark rounded-full font-sans font-semibold text-lg hover:bg-cream transition-colors"
+            >
+              Написать в Max
+            </a>
+            <a
+              href={CONTACT.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 bg-[#25D366] text-white rounded-full font-sans font-semibold text-lg hover:bg-[#1da851] transition-colors"
+            >
+              Написать в WhatsApp
+            </a>
+          </div>
         </div>
       </section>
     </>

@@ -10,6 +10,7 @@ export const CONTACT = {
   tiktok: "https://www.tiktok.com/@_olga_bog_remissia",
   tiktokHandle: "@_olga_bog_remissia",
   max: "https://max.ru/u/f9LHodD0cOI7WAZ_XXFNLWP0PuPz0E_zLRP06ceDIFKpgqik_6WnuXgBTYs",
+  whatsapp: "https://wa.me/79141595737",
 } as const;
 
 // ─── Навигация ───────────────────────────────────────────────
